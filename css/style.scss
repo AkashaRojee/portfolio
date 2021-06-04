@@ -241,11 +241,11 @@ nav {
 
 /*
   ========================================
-  Header
+  Headline
   ========================================
 */
 
-header {
+#headline {
   padding: 114px 24px;
   background-image: url('../images/header-background.png');
   background-repeat: no-repeat;
@@ -254,7 +254,18 @@ header {
     padding-bottom: 12px;
   }
 
-  #social-icons {
-    width: 170.17px;
+  .social {
+    align-items: center;
+    >:nth-child(-n+4) {
+      margin-right: 20px;
+    }
+    li {
+      a {
+        display: block;
+        img {
+          vertical-align: middle;
+        }
+      }
+    }
   }
 }
