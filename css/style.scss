@@ -140,10 +140,6 @@ p {
 
 nav {
   padding: 12px 35px 12px 24px;
-  
-  img {
-    height: 20px;
-  }
 }
 
 /*
@@ -156,7 +152,6 @@ header {
   padding: 114px 24px;
   background-image: url('../images/header-background.png');
   background-repeat: no-repeat;
-  background-color: transparent;
 
   >:nth-child(-n+3) {
     padding-bottom: 12px;
