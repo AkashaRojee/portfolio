@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
 /*
   ========================================
   CSS reset
@@ -60,6 +62,54 @@ table {
 
 /*
   ========================================
+  General CSS
+  ========================================
+*/
+
+html {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 52px;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/*
+  ========================================
+  Reusable font styling classes
+  ========================================
+*/
+
+.p-medium {
+  font-weight: 500;
+}
+
+.blue-main {
+  color: #172B4D;
+}
+
+.blue-light {
+  color: #344563;
+}
+
+.purple-main {
+  color: #6070FF;
+}
+
+.purple-light {
+  color: #7F8CFF;
+}
+
+/*
+  ========================================
   Reusable Flexbox classes
   ========================================
 */
@@ -67,6 +117,11 @@ table {
 .flex-row {
   display: flex;
   flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
 }
 
 .justify-between {
@@ -79,7 +134,7 @@ table {
 
 /*
   ========================================
-  Toolbar/Header
+  Navigation bar
   ========================================
 */
 
@@ -89,8 +144,25 @@ nav {
   img {
     height: 20px;
   }
+}
 
-  span {
-    color: #6070FF;
+/*
+  ========================================
+  Header
+  ========================================
+*/
+
+header {
+  padding: 114px 24px;
+  background-image: url('../images/header-background.png');
+  background-repeat: no-repeat;
+  background-color: transparent;
+
+  >:nth-child(-n+3) {
+    padding-bottom: 12px;
+  }
+
+  #social-icons {
+    width: 170.17px;
   }
 }
