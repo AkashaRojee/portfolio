@@ -51,12 +51,11 @@ ol, ul {
 
 blockquote, q {
   quotes: none;
-}
 
-blockquote::before, blockquote::after,
-q::before, q::after {
-  content: '';
-  content: none;
+  &:before, &:after {
+    content: '';
+    content: none;
+  }
 }
 
 table {
@@ -153,7 +152,7 @@ nav {
     border: none;
     background-color: transparent;
     padding: 0;
-    
+
     &:hover {
       cursor: pointer;
     }
