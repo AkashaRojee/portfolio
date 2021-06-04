@@ -140,6 +140,20 @@ p {
 
 nav {
   padding: 12px 35px 12px 24px;
+
+  img {
+    vertical-align: middle;
+  }
+
+  button {
+    border: none;
+    background-color: transparent;
+    padding: 0px;
+    
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 /*

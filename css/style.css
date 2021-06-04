@@ -150,6 +150,20 @@ nav {
   padding: 12px 35px 12px 24px;
 }
 
+nav img {
+  vertical-align: middle;
+}
+
+nav button {
+  border: none;
+  background-color: transparent;
+  padding: 0px;
+}
+
+nav button:hover {
+  cursor: pointer;
+}
+
 /*
   ========================================
   Header
