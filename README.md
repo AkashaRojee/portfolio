@@ -19,7 +19,6 @@ Things done so far in the project:
 ## Built With
 
 - Major languages: HTML, CSS
-- Frameworks: none
 - Technologies used: Lighthouse, Webhint, Stylelint
 
 ## Live Demo
