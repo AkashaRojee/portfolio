@@ -256,12 +256,15 @@ nav {
 
   .social {
     align-items: center;
+    
     >:nth-child(-n+4) {
       margin-right: 20px;
     }
+
     li {
       a {
         display: block;
+
         img {
           vertical-align: middle;
         }
