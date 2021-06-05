@@ -16,6 +16,11 @@ Things done so far in the project:
 * Use Flexbox for positioning
 * Use images and backgrounds
 
+#### 2. Build mobile version
+
+* Use Grid alongside Flexbox for positioning
+* Add button hover and pressed effects
+
 ## Built With
 
 - Major languages: HTML, CSS
@@ -42,11 +47,19 @@ git clone https://github.com/AkashaRojee/portfolio
 git clone -b mobile-skeleton https://github.com/AkashaRojee/portfolio
 ```
 
+* **To clone the mobile-version branch**
+
+```
+git clone -b mobile-version https://github.com/AkashaRojee/portfolio
+```
+
 **Notes:**
 
-* So far, only the first 2 sections of the mobile skeleton have been built. Please, view the website in mobile version.
+* So far, only the first 4 sections of the mobile skeleton have been built. Please, view the website in mobile version.
 
-* Nothing has been merged to main yet.
+* Main only contains the first 2 sections.
+
+* Mobile version is currently under review.
 
 ## Authors
 

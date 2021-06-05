@@ -145,54 +145,6 @@ table {
 
 /*
   ========================================
-  General CSS
-  ========================================
-*/
-
-html {
-  font-family: 'Poppins', sans-serif;
-}
-
-h1 {
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 52px;
-}
-
-p {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-}
-
-/*
-  ========================================
-  Reusable font styling classes
-  ========================================
-*/
-
-.p-medium {
-  font-weight: 500;
-}
-
-.blue-main {
-  color: #172b4d;
-}
-
-.blue-light {
-  color: #344563;
-}
-
-.purple-main {
-  color: #6070ff;
-}
-
-.purple-light {
-  color: #7f8cff;
-}
-
-/*
-  ========================================
   Reusable Flexbox classes
   ========================================
 */
@@ -217,24 +169,94 @@ p {
 
 /*
   ========================================
+  Reusable Grid classes
+  ========================================
+*/
+
+.grid {
+  display: grid;
+}
+
+/*
+  ========================================
+  General CSS
+  ========================================
+*/
+
+html {
+  font-family: 'Poppins', sans-serif;
+  background-color: #e5e5e5;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 52px;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/*
+  ========================================
+  Reusable font styling classes
+  ========================================
+*/
+
+.bg-white {
+  background-color: white;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.blue-main {
+  color: #172b4d;
+}
+
+.blue-light {
+  color: #344563;
+}
+
+.purple-main {
+  color: #6070ff;
+}
+
+.purple-light {
+  color: #7f8cff;
+}
+
+.grey-main {
+  color: #7a869a;
+}
+
+/*
+  ========================================
   Navigation bar
   ========================================
 */
 
-nav {
-  padding: 12px 35px 12px 24px;
+header {
+  nav {
+    padding: 12px 35px 12px 24px;
+    background-color: white;
 
-  img {
-    vertical-align: middle;
-  }
+    button {
+      border: none;
+      background-color: transparent;
+      padding: 0;
 
-  button {
-    border: none;
-    background-color: transparent;
-    padding: 0;
+      img {
+        vertical-align: middle;
+      }
 
-    &:hover {
-      cursor: pointer;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
@@ -246,9 +268,14 @@ nav {
 */
 
 #headline {
-  padding: 114px 24px;
   background-image: url('../images/header-background.png');
   background-repeat: no-repeat;
+  border-bottom-left-radius: 50px;
+}
+
+.about {
+  background-color: white;
+  padding: 114px 24px;
 
   >:nth-child(-n+3) {
     padding-bottom: 12px;
@@ -267,6 +294,166 @@ nav {
 
         img {
           vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+
+/*
+  ========================================
+  Works
+  ========================================
+*/
+
+#works {
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 100%;
+  grid-template-areas:
+    "work1"
+    "work2"
+    "work3"
+    "work4";
+  grid-row-gap: 88px;
+  padding: 114px 24px;
+
+  >:nth-child(1) {
+    grid-area: work1;
+  }
+
+  >:nth-child(2) {
+    grid-area: work2;
+  }
+
+  >:nth-child(3) {
+    grid-area: work3;
+  }
+
+  >:nth-child(4) {
+    grid-area: work4;
+  }
+
+  .work-card {
+    padding: 16px 16px 24px 16px;
+    border: 1px solid #dfe1e6;
+    border-radius: 16px;
+    background-color: white;
+
+    .work-info {
+      margin-top: 12px;
+      margin-bottom: 12px;
+
+      >:nth-child(-n+2) {
+        margin-bottom: 12px;
+      }
+
+      .title {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 44px;
+      }
+
+      .subtitle {
+        div {
+          font-weight: 600;
+          font-size: 13px;
+          line-height: 16px;
+          margin-right: 12px;
+        }
+      }
+
+      .description {
+        font-size: 15px;
+      }
+    }
+
+    .tag-info {
+      margin-bottom: 24px;
+
+      span {
+        margin-right: 8px;
+        font-size: 12px;
+        line-height: 16px;
+        padding: 4px 12px;
+        border-radius: 8px;
+        background-color: #ebebff;
+      }
+    }
+  }
+}
+
+.btn {
+  padding: 12px;
+  font-size: 17px;
+  line-height: 24px;
+  color: #396df2;
+  border: 1px solid #7f8cff;
+  background-color: white;
+  border-radius: 8px;
+
+  &:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #6070ff;
+    border-color: #6070ff;
+    box-shadow: 0 8px 16px 0 #4053fc3d;
+  }
+
+  &:active {
+    background-color: #2230d2;
+    border-color: #2230d2;
+    box-shadow: none;
+  }
+}
+
+/*
+  ========================================
+  About Me
+  ========================================
+*/
+
+#about-me {
+  padding-bottom: 12px;
+  border-top-right-radius: 75px;
+
+  button {
+    margin-top: 22px;
+  }
+}
+
+#skills {
+  padding-left: 36px;
+  padding-right: 36px;
+  background-color: white;
+  padding-bottom: 113.85px;
+
+  .skill-card {
+    .skill-category {
+      font-size: 20px;
+      line-height: 24px;
+      padding: 24px 39px 24px 12px;
+
+      img {
+        cursor: pointer;
+      }
+    }
+
+    .skill-list {
+      padding-top: 12px;
+      padding-bottom: 12px;
+
+      .skill-item {
+        background-color: #f7f7f9;
+        font-size: 15px;
+        line-height: 20px;
+        font-weight: 500;
+        color: #253858;
+        padding: 9px 0 9.72px 12px;
+        border-radius: 8px;
+        margin-bottom: 12px;
+
+        img {
+          margin-right: 16px;
         }
       }
     }
