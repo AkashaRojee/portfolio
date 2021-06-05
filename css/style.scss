@@ -358,14 +358,7 @@ header {
           font-weight: 600;
           font-size: 13px;
           line-height: 16px;
-        }
-
-        >:nth-child(-n+2) {
-          &::after {
-            margin-left: 12px;
-            content: url('../images/works/circle.png') / "Separator";
-            margin-right: 12px;
-          }
+          margin-right: 12px;
         }
       }
 

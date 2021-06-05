@@ -371,11 +371,6 @@ header nav button:hover {
   font-weight: 600;
   font-size: 13px;
   line-height: 16px;
-}
-
-#works .work-card .work-info .subtitle > :nth-child(-n+2)::after {
-  margin-left: 12px;
-  content: url("../images/works/circle.png")/"Separator";
   margin-right: 12px;
 }
 
