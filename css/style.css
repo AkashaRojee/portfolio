@@ -280,14 +280,14 @@ nav {
   background-color: white;
 }
 
-nav img {
-  vertical-align: middle;
-}
-
 nav button {
   border: none;
   background-color: transparent;
   padding: 0;
+}
+
+nav button img {
+  vertical-align: middle;
 }
 
 nav button:hover {
@@ -365,7 +365,7 @@ nav button:hover {
   grid-area: work3;
 }
 
-#works > :nth-child(3) {
+#works > :nth-child(4) {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: work4;
@@ -380,6 +380,10 @@ nav button:hover {
 
 #works .work-card .work-info {
   margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+#works .work-card .work-info > :nth-child(-n+2) {
   margin-bottom: 12px;
 }
 
@@ -403,10 +407,6 @@ nav button:hover {
 
 #works .work-card .work-info .description {
   font-size: 15px;
-}
-
-#works .work-card .work-info > :nth-child(-n+2) {
-  margin-bottom: 12px;
 }
 
 #works .work-card .tag-info {

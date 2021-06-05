@@ -268,14 +268,14 @@ nav {
   padding: 12px 35px 12px 24px;
   background-color: white;
 
-  img {
-    vertical-align: middle;
-  }
-
   button {
     border: none;
     background-color: transparent;
     padding: 0;
+
+    img {
+      vertical-align: middle;
+    }
 
     &:hover {
       cursor: pointer;
@@ -351,7 +351,7 @@ nav {
     grid-area: work3;
   }
 
-  >:nth-child(3) {
+  >:nth-child(4) {
     grid-area: work4;
   }
 
@@ -364,6 +364,10 @@ nav {
     .work-info {
       margin-top: 12px;
       margin-bottom: 12px;
+
+      >:nth-child(-n+2) {
+        margin-bottom: 12px;
+      }
 
       .title {
         font-weight: 700;
@@ -389,10 +393,6 @@ nav {
 
       .description {
         font-size: 15px;
-      }
-
-      >:nth-child(-n+2) {
-        margin-bottom: 12px;
       }
     }
 
