@@ -377,11 +377,8 @@ header {
     .tag-info {
       margin-bottom: 24px;
 
-      >:nth-child(-n+2) {
-        margin-right: 8px;
-      }
-
       span {
+        margin-right: 8px;
         font-size: 12px;
         line-height: 16px;
         padding: 4px 12px;
@@ -392,7 +389,7 @@ header {
   }
 }
 
-button {
+.btn {
   padding: 12px;
   font-size: 17px;
   line-height: 24px;
@@ -426,7 +423,7 @@ button {
   padding-bottom: 12px;
   border-top-right-radius: 75px;
 
-  >:nth-last-child(1) {
+  button {
     margin-top: 22px;
   }
 }
@@ -443,7 +440,7 @@ button {
       line-height: 24px;
       padding: 24px 39px 24px 12px;
 
-      >:nth-child(2) {
+      img {
         cursor: pointer;
       }
     }
@@ -452,7 +449,7 @@ button {
       padding-top: 12px;
       padding-bottom: 12px;
 
-      >:nth-child(n) {
+      .skill-item {
         background-color: #f7f7f9;
         font-size: 15px;
         line-height: 20px;
@@ -460,14 +457,11 @@ button {
         color: #253858;
         padding: 9px 0 9.72px 12px;
         border-radius: 8px;
+        margin-bottom: 12px;
 
         img {
           margin-right: 16px;
         }
-      }
-
-      >:nth-child(-n+2) {
-        margin-bottom: 12px;
       }
     }
   }

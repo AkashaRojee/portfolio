@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
 /*
   ========================================
   CSS reset
@@ -130,7 +131,8 @@ q {
   quotes: none;
 }
 
-blockquote::before, blockquote::after,
+blockquote::before,
+blockquote::after,
 q::before,
 q::after {
   content: '';
@@ -149,34 +151,32 @@ table {
 */
 .flex-row {
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
 
 .flex-col {
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .justify-between {
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .align-center {
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 /*
@@ -290,8 +290,8 @@ header nav button:hover {
 
 .about .social {
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .about .social > :nth-child(-n+4) {
@@ -313,10 +313,10 @@ header nav button:hover {
 */
 #works {
   -ms-grid-rows: auto auto auto;
-      grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto auto;
   -ms-grid-columns: 100%;
-      grid-template-columns: 100%;
-      grid-template-areas: "work1" "work2" "work3" "work4";
+  grid-template-columns: 100%;
+  grid-template-areas: "work1" "work2" "work3" "work4";
   grid-row-gap: 88px;
   padding: 114px 24px;
 }
@@ -387,11 +387,8 @@ header nav button:hover {
   margin-bottom: 24px;
 }
 
-#works .work-card .tag-info > :nth-child(-n+2) {
-  margin-right: 8px;
-}
-
 #works .work-card .tag-info span {
+  margin-right: 8px;
   font-size: 12px;
   line-height: 16px;
   padding: 4px 12px;
@@ -399,7 +396,7 @@ header nav button:hover {
   background-color: #ebebff;
 }
 
-button {
+.btn {
   padding: 12px;
   font-size: 17px;
   line-height: 24px;
@@ -409,20 +406,20 @@ button {
   border-radius: 8px;
 }
 
-button:hover {
+.btn:hover {
   cursor: pointer;
   color: white;
   background-color: #6070ff;
   border-color: #6070ff;
   -webkit-box-shadow: 0 8px 16px 0 #4053fc3d;
-          box-shadow: 0 8px 16px 0 #4053fc3d;
+  box-shadow: 0 8px 16px 0 #4053fc3d;
 }
 
-button:active {
+.btn:active {
   background-color: #2230d2;
   border-color: #2230d2;
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 /*
@@ -435,7 +432,7 @@ button:active {
   border-top-right-radius: 75px;
 }
 
-#about-me > :nth-last-child(1) {
+#about-me button {
   margin-top: 22px;
 }
 
@@ -452,7 +449,7 @@ button:active {
   padding: 24px 39px 24px 12px;
 }
 
-#skills .skill-card .skill-category > :nth-child(2) {
+#skills .skill-card .skill-category img {
   cursor: pointer;
 }
 
@@ -461,7 +458,7 @@ button:active {
   padding-bottom: 12px;
 }
 
-#skills .skill-card .skill-list > :nth-child(n) {
+#skills .skill-card .skill-list .skill-item {
   background-color: #f7f7f9;
   font-size: 15px;
   line-height: 20px;
@@ -469,13 +466,9 @@ button:active {
   color: #253858;
   padding: 9px 0 9.72px 12px;
   border-radius: 8px;
-}
-
-#skills .skill-card .skill-list > :nth-child(n) img {
-  margin-right: 16px;
-}
-
-#skills .skill-card .skill-list > :nth-child(-n+2) {
   margin-bottom: 12px;
 }
-/*# sourceMappingURL=style.css.map */
+
+#skills .skill-card .skill-list .skill-item img {
+  margin-right: 16px;
+}
