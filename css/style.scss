@@ -247,7 +247,7 @@ p {
 nav {
   padding: 12px 35px 12px 24px;
   background-color: white;
-  
+
   img {
     vertical-align: middle;
   }
@@ -307,21 +307,38 @@ nav {
 
 
 #works {
-  // grid-template-rows: auto auto auto;
-  // grid-template-columns: auto;
-  // grid-template-areas:
-  //   "work1"
-  //   "work2"
-  //   "work3";
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 100%;
+  grid-template-areas:
+    "work1"
+    "work2"
+    "work3"
+    "work4";
+  grid-row-gap: 88px;
   padding: 114px 24px;
 
+  >:nth-child(1) {
+    grid-area: work1;
+  }
+
+  >:nth-child(2) {
+    grid-area: work2;
+  }
+
+  >:nth-child(3) {
+    grid-area: work3;
+  }
+
+  >:nth-child(3) {
+    grid-area: work4;
+  }
+
   .work-card {
-    //grid-area: work1;
     padding: 16px 16px 24px 16px;
     border: 1px solid #dfe1e6;
     border-radius: 16px;
     background-color: white;
-
+  
     .work-info {
       margin-top: 12px;
       margin-bottom: 12px;
@@ -399,16 +416,6 @@ nav {
       }
 
     }
-
-    
-  }
-
-  #work2 {
-    //grid-area: work2;
-  }
-
-  #work3 {
-    //grid-area: work3;
   }
 
 }

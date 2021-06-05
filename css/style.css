@@ -314,7 +314,37 @@ nav button:hover {
   ========================================
 */
 #works {
+  -ms-grid-rows: auto auto auto;
+      grid-template-rows: auto auto auto;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+      grid-template-areas: "work1" "work2" "work3" "work4";
+  grid-row-gap: 88px;
   padding: 114px 24px;
+}
+
+#works > :nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: work1;
+}
+
+#works > :nth-child(2) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: work2;
+}
+
+#works > :nth-child(3) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: work3;
+}
+
+#works > :nth-child(3) {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: work4;
 }
 
 #works .work-card {
