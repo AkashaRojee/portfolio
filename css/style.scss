@@ -372,7 +372,6 @@ nav {
       }
 
       .subtitle {
-
         div {
           font-weight: 600;
           font-size: 13px;
@@ -380,13 +379,12 @@ nav {
         }
 
         >:nth-child(-n+2) {
-          &:after {
+          &::after {
             margin-left: 12px;
             content: url('../images/works/circle.png') / "Separator";
             margin-right: 12px;
           }
         }
-        
       }
 
       .description {
@@ -424,11 +422,11 @@ nav {
 
 #about-me {
   padding-bottom: 12px;
+  border-top-right-radius: 75px;
 
   >:nth-last-child(1) {
     margin-top: 22px;
   }
-  border-top-right-radius: 75px;
 }
 
 #skills {
@@ -438,7 +436,6 @@ nav {
   padding-bottom: 113.85px;
 
   .skill-card {
-
     .skill-category {
       font-size: 20px;
       line-height: 24px;
@@ -471,6 +468,5 @@ nav {
         margin-bottom: 12px;
       }
     }
-
   }
 }
