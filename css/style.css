@@ -249,22 +249,22 @@ p {
   Navigation bar
   ========================================
 */
-nav {
+header nav {
   padding: 12px 35px 12px 24px;
   background-color: white;
 }
 
-nav button {
+header nav button {
   border: none;
   background-color: transparent;
   padding: 0;
 }
 
-nav button img {
+header nav button img {
   vertical-align: middle;
 }
 
-nav button:hover {
+header nav button:hover {
   cursor: pointer;
 }
 

@@ -240,21 +240,23 @@ p {
   ========================================
 */
 
-nav {
-  padding: 12px 35px 12px 24px;
-  background-color: white;
-
-  button {
-    border: none;
-    background-color: transparent;
-    padding: 0;
-
-    img {
-      vertical-align: middle;
-    }
-
-    &:hover {
-      cursor: pointer;
+header {
+  nav {
+    padding: 12px 35px 12px 24px;
+    background-color: white;
+  
+    button {
+      border: none;
+      background-color: transparent;
+      padding: 0;
+  
+      img {
+        vertical-align: middle;
+      }
+  
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
