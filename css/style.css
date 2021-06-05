@@ -149,6 +149,7 @@ table {
 */
 html {
   font-family: 'Poppins', sans-serif;
+  background-color: #e5e5e5;
 }
 
 h1 {
@@ -168,6 +169,10 @@ p {
   Reusable font styling classes
   ========================================
 */
+.bg-white {
+  background-color: white;
+}
+
 .font-medium {
   font-weight: 500;
 }
@@ -252,6 +257,7 @@ p {
 */
 nav {
   padding: 12px 35px 12px 24px;
+  background-color: white;
 }
 
 nav img {
@@ -277,6 +283,7 @@ nav button:hover {
   padding: 114px 24px;
   background-image: url("../images/header-background.png");
   background-repeat: no-repeat;
+  background-color: white;
 }
 
 #headline > :nth-child(-n+3) {
@@ -314,6 +321,7 @@ nav button:hover {
   padding: 16px 16px 24px 16px;
   border: 1px solid #dfe1e6;
   border-radius: 16px;
+  background-color: white;
 }
 
 #works .work-card .work-info {
