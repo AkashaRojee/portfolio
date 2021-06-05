@@ -205,7 +205,7 @@ button {
   font-size: 17px;
   line-height: 24px;
   color: #396df2;
-  border: 1px solid #7F8CFF;
+  border: 1px solid #7f8cff;
   background-color: white;
   border-radius: 8px;
 
@@ -222,7 +222,6 @@ button {
     border-color: #2230d2;
     box-shadow: none;
   }
-
 }
 
 /*
@@ -261,39 +260,6 @@ button {
 
 /*
   ========================================
-  Reusable section styling classes
-  ========================================
-*/
-
-.about {
-  background-color: white;
-  padding: 114px 24px;
-
-  >:nth-child(-n+3) {
-    padding-bottom: 12px;
-  }
-
-  .social {
-    align-items: center;
-
-    >:nth-child(-n+4) {
-      margin-right: 20px;
-    }
-
-    li {
-      a {
-        display: block;
-
-        img {
-          vertical-align: middle;
-        }
-      }
-    }
-  }
-}
-
-/*
-  ========================================
   Navigation bar
   ========================================
 */
@@ -327,6 +293,33 @@ nav {
   background-image: url('../images/header-background.png');
   background-repeat: no-repeat;
   border-bottom-left-radius: 50px;
+}
+
+.about {
+  background-color: white;
+  padding: 114px 24px;
+
+  >:nth-child(-n+3) {
+    padding-bottom: 12px;
+  }
+
+  .social {
+    align-items: center;
+
+    >:nth-child(-n+4) {
+      margin-right: 20px;
+    }
+
+    li {
+      a {
+        display: block;
+
+        img {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
 }
 
 /*

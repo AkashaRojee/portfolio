@@ -216,7 +216,7 @@ button {
   font-size: 17px;
   line-height: 24px;
   color: #396df2;
-  border: 1px solid #7F8CFF;
+  border: 1px solid #7f8cff;
   background-color: white;
   border-radius: 8px;
 }
@@ -272,38 +272,6 @@ button:active {
 
 /*
   ========================================
-  Reusable section styling classes
-  ========================================
-*/
-.about {
-  background-color: white;
-  padding: 114px 24px;
-}
-
-.about > :nth-child(-n+3) {
-  padding-bottom: 12px;
-}
-
-.about .social {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.about .social > :nth-child(-n+4) {
-  margin-right: 20px;
-}
-
-.about .social li a {
-  display: block;
-}
-
-.about .social li a img {
-  vertical-align: middle;
-}
-
-/*
-  ========================================
   Navigation bar
   ========================================
 */
@@ -335,6 +303,33 @@ nav button:hover {
   background-image: url("../images/header-background.png");
   background-repeat: no-repeat;
   border-bottom-left-radius: 50px;
+}
+
+.about {
+  background-color: white;
+  padding: 114px 24px;
+}
+
+.about > :nth-child(-n+3) {
+  padding-bottom: 12px;
+}
+
+.about .social {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about .social > :nth-child(-n+4) {
+  margin-right: 20px;
+}
+
+.about .social li a {
+  display: block;
+}
+
+.about .social li a img {
+  vertical-align: middle;
 }
 
 /*
