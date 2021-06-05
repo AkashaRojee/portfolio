@@ -145,7 +145,41 @@ table {
 
 /*
   ========================================
-  General CSS
+  Reusable Flexbox classes
+  ========================================
+*/
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+/*
+  ========================================
+  Reusable Grid classes
+  ========================================
+*/
+
+.grid {
+  display: grid;
+}
+
+/*
+  ========================================
+  Reusable element styling CSS
   ========================================
 */
 
@@ -164,6 +198,31 @@ p {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+}
+
+button {
+  padding: 12px;
+  font-size: 17px;
+  line-height: 24px;
+  color: #396df2;
+  border: 1px solid #7F8CFF;
+  background-color: white;
+  border-radius: 8px;
+
+  &:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #6070ff;
+    border-color: #6070ff;
+    box-shadow: 0 8px 16px 0 #4053fc3d;
+  }
+  
+  &:active {
+    background-color: #2230d2;
+    border-color: #2230d2;
+    box-shadow: none;
+  }
+
 }
 
 /*
@@ -202,40 +261,35 @@ p {
 
 /*
   ========================================
-  Reusable Flexbox classes
+  Reusable section styling classes
   ========================================
 */
 
-.flex-row {
-  display: flex;
-  flex-direction: row;
-}
+.about {
+  background-color: white;
+  padding: 114px 24px;
 
-.flex-col {
-  display: flex;
-  flex-direction: column;
-}
+  >:nth-child(-n+3) {
+    padding-bottom: 12px;
+  }
 
-.justify-between {
-  justify-content: space-between;
-}
+  .social {
+    align-items: center;
 
-.justify-center {
-  justify-content: center;
-}
+    >:nth-child(-n+4) {
+      margin-right: 20px;
+    }
 
-.align-center {
-  align-items: center;
-}
+    li {
+      a {
+        display: block;
 
-/*
-  ========================================
-  Reusable Grid classes
-  ========================================
-*/
-
-.grid {
-  display: grid;
+        img {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
 }
 
 /*
@@ -270,32 +324,9 @@ nav {
 */
 
 #headline {
-  padding: 114px 24px;
   background-image: url('../images/header-background.png');
   background-repeat: no-repeat;
-  background-color: white;
-
-  >:nth-child(-n+3) {
-    padding-bottom: 12px;
-  }
-
-  .social {
-    align-items: center;
-
-    >:nth-child(-n+4) {
-      margin-right: 20px;
-    }
-
-    li {
-      a {
-        display: block;
-
-        img {
-          vertical-align: middle;
-        }
-      }
-    }
-  }
+  border-bottom-left-radius: 50px;
 }
 
 /*
@@ -303,8 +334,6 @@ nav {
   Works
   ========================================
 */
-
-
 
 #works {
   grid-template-rows: auto auto auto;
@@ -391,31 +420,64 @@ nav {
         background-color: #ebebff;
       }
     }
-
-    button {
-      padding: 12px;
-      font-size: 17px;
-      line-height: 24px;
-      color: #396df2;
-      border: 1px solid #7F8CFF;
-      background-color: white;
-      border-radius: 8px;
-
-      &:hover {
-        cursor: pointer;
-        color: white;
-        background-color: #6070ff;
-        border-color: #6070ff;
-        box-shadow: 0 8px 16px 0 #4053fc3d;
-      }
-      
-      &:active {
-        background-color: #2230d2;
-        border-color: #2230d2;
-        box-shadow: none;
-      }
-
-    }
   }
+}
 
+/*
+  ========================================
+  About Me
+  ========================================
+*/
+
+#about-me {
+  padding-bottom: 12px;
+
+  >:nth-last-child(1) {
+    margin-top: 22px;
+  }
+  border-top-right-radius: 75px;
+}
+
+#skills {
+  padding-left: 36px;
+  padding-right: 36px;
+  background-color: white;
+  padding-bottom: 113.85px;
+
+  .skill-card {
+
+    .skill-category {
+      font-size: 20px;
+      line-height: 24px;
+      padding: 24px 39px 24px 12px;
+
+      >:nth-child(2) {
+        cursor: pointer;
+      }
+    }
+
+    .skill-list {
+      padding-top: 12px;
+      padding-bottom: 12px;
+
+      >:nth-child(n) {
+        background-color: #f7f7f9;
+        font-size: 15px;
+        line-height: 20px;
+        font-weight: 500;
+        color: #253858;
+        padding: 9px 0 9.72px 12px;
+        border-radius: 8px;
+
+        img {
+          margin-right: 16px;
+        }
+      }
+
+      >:nth-child(-n+2) {
+        margin-bottom: 12px;
+      }
+    }
+
+  }
 }
