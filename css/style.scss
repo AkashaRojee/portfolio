@@ -369,6 +369,7 @@ header {
 
     .tag-info {
       margin-bottom: 24px;
+      display: flow-root;
 
       span {
         margin-right: 8px;
@@ -377,6 +378,7 @@ header {
         padding: 4px 12px;
         border-radius: 8px;
         background-color: #ebebff;
+        float: left;
       }
     }
   }
