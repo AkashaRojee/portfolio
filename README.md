@@ -21,6 +21,12 @@ Things done so far in the project:
 * Use Grid alongside Flexbox for positioning
 * Add button hover and pressed effects
 
+#### 3. Build contact form
+
+* Pair program with a coding partner
+* Use HTML5 validation
+* Collect form data using Formspree
+
 ## Built With
 
 - Major languages: HTML, CSS
@@ -41,10 +47,10 @@ Use the following command in your terminal:
 git clone https://github.com/AkashaRojee/portfolio
 ```
 
-* **To clone the mobile-skeleton branch**
+* **To clone the contact-form branch**
 
 ```
-git clone -b mobile-skeleton https://github.com/AkashaRojee/portfolio
+git clone -b contact-form https://github.com/AkashaRojee/portfolio
 ```
 
 * **To clone the mobile-version branch**
@@ -53,13 +59,19 @@ git clone -b mobile-skeleton https://github.com/AkashaRojee/portfolio
 git clone -b mobile-version https://github.com/AkashaRojee/portfolio
 ```
 
+* **To clone the mobile-skeleton branch**
+
+```
+git clone -b mobile-skeleton https://github.com/AkashaRojee/portfolio
+```
+
 **Notes:**
 
-* So far, only the first 4 sections of the mobile skeleton have been built. Please, view the website in mobile version.
+* So far, only the mobile version has been built. Please, view the website in mobile view.
 
-* Main only contains the first 2 sections.
+* Main does not contain the contact form yet.
 
-* Mobile version is currently under review.
+* Contact form is currently under review.
 
 ## Authors
 
@@ -68,6 +80,10 @@ git clone -b mobile-version https://github.com/AkashaRojee/portfolio
 - GitHub: [@AkashaRojee](https://github.com/AkashaRojee)
 - Twitter: [@AkashaRojee](https://twitter.com/AkashaRojee)
 - LinkedIn: [Akasha Rojee](https://linkedin.com/in/AkashaRojee)
+
+👤 **Damilare Akintoye**
+
+- GitHub: [@dami1080](https://github.com/dami1080)
 
 ## 🤝 Contributing
 
