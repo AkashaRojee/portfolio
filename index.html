@@ -275,9 +275,9 @@
         <h1 class="flex-row white-main">Contact me</h1>
         <p class="flex-row white-light">If you have an application you are interested in developing, a feature that you need built or a project that needs coding. I’d love to help with it </p>
 
-        <form action="" class="flex-col">
+        <form action="https://formspree.io/f/mleanrgp" method="POST" class="flex-col">
           <input type="text" name="user-name" id="name" maxlength="30" placeholder="Name" class="flex-row blue-main" required>
-          <input type="email" name="user-email" id="email" placeholder="user@mail.com" class="flex-row blue-main" required>
+          <input type="email" name="user-email" id="email" placeholder="user@mail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="flex-row blue-main" required>
           <textarea name="user-message" id="message" cols="" rows="6" maxlength="500" placeholder="Write your message here" class="flex-row blue-main" required></textarea>
           <div class="flex-row">
             <button type="submit" class="btn">Get in Touch</button>
