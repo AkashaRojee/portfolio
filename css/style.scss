@@ -234,6 +234,14 @@ p {
   color: #7a869a;
 }
 
+.white-main {
+  color: #ffffff;
+}
+
+.white-light {
+  color: #ebebff;
+}
+
 /*
   ========================================
   Navigation bar
@@ -458,4 +466,50 @@ header {
       }
     }
   }
+}
+
+/*
+  ========================================
+  Contact Me
+  ========================================
+*/
+
+#contact-me {
+  padding: 103px 24px 45px 24px;
+  background-image: url('../images/contact-me-background.png');
+  background-repeat: no-repeat;
+  background-position: 100% 10%;
+  background-color: #6070ff;
+  border-top-left-radius: 75px;
+
+  p {
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    margin-top: 12px;
+    margin-bottom: 48px;
+  }
+
+  form {
+
+    input,
+    textarea {
+      font-family: inherit;
+      padding: 15px 38px 15px 16px;
+      border-radius: 8px;
+      border: 1px solid #cfd8dc;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    #email {
+      margin-top: 20px;
+      margin-bottom: 18px;
+    }
+
+    textarea {
+      margin-bottom: 22px;
+    }
+  }
+
 }
