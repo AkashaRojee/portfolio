@@ -481,7 +481,7 @@ header nav button:hover {
   Contact Me
   ========================================
 */
-#contact-me {
+footer {
   padding: 103px 24px 45px 24px;
   background-image: url("../images/contact-me-background.png");
   background-repeat: no-repeat;
@@ -490,7 +490,7 @@ header nav button:hover {
   border-top-left-radius: 75px;
 }
 
-#contact-me p {
+footer p {
   font-size: 20px;
   line-height: 28px;
   text-align: center;
@@ -498,8 +498,8 @@ header nav button:hover {
   margin-bottom: 48px;
 }
 
-#contact-me form input,
-#contact-me form textarea {
+footer form input,
+footer form textarea {
   font-family: inherit;
   padding: 15px 38px 15px 16px;
   border-radius: 8px;
@@ -508,12 +508,12 @@ header nav button:hover {
   line-height: 20px;
 }
 
-#contact-me form #email {
+footer form #email {
   margin-top: 20px;
   margin-bottom: 18px;
 }
 
-#contact-me form textarea {
+footer form textarea {
   margin-bottom: 22px;
 }
 /*# sourceMappingURL=style.css.map */
