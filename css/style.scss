@@ -171,6 +171,10 @@ table {
   align-items: center;
 }
 
+.wrap {
+  flex-wrap: wrap;
+}
+
 /*
   ========================================
   Reusable Grid classes
@@ -367,9 +371,13 @@ header {
     border-radius: 16px;
     background-color: white;
 
+    img {
+      width: 100%;
+    }
+
     .work-info {
       margin-top: 12px;
-      margin-bottom: 12px;
+      // margin-bottom: 12px;
 
       >:nth-child(-n+2) {
         margin-bottom: 12px;
@@ -393,18 +401,19 @@ header {
       .description {
         font-size: 15px;
       }
-    }
 
-    .tag-info {
-      margin-bottom: 24px;
-
-      span {
-        margin-right: 8px;
-        font-size: 12px;
-        line-height: 16px;
-        padding: 4px 12px;
-        border-radius: 8px;
-        background-color: #ebebff;
+      .tag-info {
+        margin-top: 12px;
+        margin-bottom: 24px;
+  
+        span {
+          margin-right: 8px;
+          font-size: 12px;
+          line-height: 16px;
+          padding: 4px 12px;
+          border-radius: 8px;
+          background-color: #ebebff;
+        }
       }
     }
   }
@@ -598,6 +607,103 @@ footer {
         font-size: 16px;
         line-height: 24px;
       }
+    }
+  }
+
+  /*
+    ========================================
+    Works
+    ========================================
+  */
+
+  #works {
+    // grid-template-rows: auto auto auto;
+    // grid-template-columns: 100%;
+    // grid-template-areas:
+    //   "work1"
+    //   "work2"
+    //   "work3"
+    //   "work4";
+    // grid-row-gap: 88px;
+    // padding: 114px 24px;
+  
+    // >:nth-child(1) {
+    //   grid-area: work1;
+    // }
+  
+    // >:nth-child(2) {
+    //   grid-area: work2;
+    // }
+  
+    // >:nth-child(3) {
+    //   grid-area: work3;
+    // }
+  
+    // >:nth-child(4) {
+    //   grid-area: work4;
+    // }
+  
+    .work-card {
+      padding: 24px;
+    //   border: 1px solid #dfe1e6;
+    //   border-radius: 16px;
+    //   background-color: white;
+  
+      img {
+       width: auto;
+      //  padding-right: 24px;
+      //  box-sizing: border-box;
+      }
+  
+      .work-info {
+        width: 50%;
+    //     margin-top: 12px;
+        // margin-bottom: 20px;
+  
+    //     >:nth-child(-n+2) {
+    //       margin-bottom: 12px;
+    //     }
+  
+        .title {
+          font-size: 40px;
+          line-height: 52px;
+          margin-bottom: 20px;
+        }
+  
+        .subtitle {
+          margin-bottom: 32px;
+
+          div {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 24px;
+
+            & + div {
+              font-weight: 500;
+            }
+          }
+        }
+  
+        .description {
+          font-size: 16px;
+          line-height: 24px;
+          margin-bottom: 28px;
+        }
+
+        .tag-info {
+          margin-bottom: 40px;
+    
+      //     span {
+      //       margin-right: 8px;
+      //       font-size: 12px;
+      //       line-height: 16px;
+      //       padding: 4px 12px;
+      //       border-radius: 8px;
+      //       background-color: #ebebff;
+      //     }
+        }
+      }
+  
     }
   }
 

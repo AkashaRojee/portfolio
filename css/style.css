@@ -185,6 +185,11 @@ table {
           align-items: center;
 }
 
+.wrap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 /*
   ========================================
   Reusable Grid classes
@@ -383,9 +388,12 @@ header nav button:hover {
   background-color: white;
 }
 
+#works .work-card img {
+  width: 100%;
+}
+
 #works .work-card .work-info {
   margin-top: 12px;
-  margin-bottom: 12px;
 }
 
 #works .work-card .work-info > :nth-child(-n+2) {
@@ -409,11 +417,12 @@ header nav button:hover {
   font-size: 15px;
 }
 
-#works .work-card .tag-info {
+#works .work-card .work-info .tag-info {
+  margin-top: 12px;
   margin-bottom: 24px;
 }
 
-#works .work-card .tag-info span {
+#works .work-card .work-info .tag-info span {
   margin-right: 8px;
   font-size: 12px;
   line-height: 16px;
@@ -591,6 +600,44 @@ footer form textarea {
   #headline p + p {
     font-size: 16px;
     line-height: 24px;
+  }
+  /*
+    ========================================
+    Works
+    ========================================
+  */
+  #works .work-card {
+    padding: 24px;
+  }
+  #works .work-card img {
+    width: auto;
+  }
+  #works .work-card .work-info {
+    width: 50%;
+  }
+  #works .work-card .work-info .title {
+    font-size: 40px;
+    line-height: 52px;
+    margin-bottom: 20px;
+  }
+  #works .work-card .work-info .subtitle {
+    margin-bottom: 32px;
+  }
+  #works .work-card .work-info .subtitle div {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  #works .work-card .work-info .subtitle div + div {
+    font-weight: 500;
+  }
+  #works .work-card .work-info .description {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 28px;
+  }
+  #works .work-card .work-info .tag-info {
+    margin-bottom: 40px;
   }
 }
 /*# sourceMappingURL=style.css.map */
