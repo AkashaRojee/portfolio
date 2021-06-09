@@ -419,11 +419,12 @@ header nav button:hover {
 
 #works .work-card .work-info .tag-info {
   margin-top: 12px;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 #works .work-card .work-info .tag-info span {
   margin-right: 8px;
+  margin-bottom: 8px;
   font-size: 12px;
   line-height: 16px;
   padding: 4px 12px;
