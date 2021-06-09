@@ -550,6 +550,11 @@ footer form textarea {
 }
 
 @media (min-width: 1024px) {
+  /*
+    ========================================
+    General CSS
+    ========================================
+  */
   h1 {
     font-size: 48px;
     font-weight: 700;
@@ -560,8 +565,24 @@ footer form textarea {
     font-weight: 400;
     line-height: 28px;
   }
+  /*
+    ========================================
+    Reusable classes
+    ========================================
+  */
   .desktop {
     display: unset;
+  }
+  /*
+    ========================================
+    Reusable Flexbox classes
+    ========================================
+  */
+  .desktop-row-reverse {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
   }
   /*
     ========================================
@@ -606,14 +627,20 @@ footer form textarea {
     Works
     ========================================
   */
+  #works {
+    grid-row-gap: 142px;
+    padding: 142px;
+  }
   #works .work-card {
     padding: 24px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
   }
   #works .work-card img {
-    width: auto;
+    width: 50%;
   }
   #works .work-card .work-info {
-    width: 50%;
+    width: 45%;
   }
   #works .work-card .work-info .title {
     font-size: 40px;
