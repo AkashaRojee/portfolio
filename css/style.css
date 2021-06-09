@@ -167,6 +167,12 @@ table {
           flex-direction: column;
 }
 
+.justify-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .justify-between {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -194,6 +200,10 @@ table {
   General CSS
   ========================================
 */
+:root {
+  --nav-height: 73.64px;
+}
+
 html {
   font-family: 'Poppins', sans-serif;
   background-color: #e5e5e5;
@@ -267,7 +277,10 @@ p {
   Navigation bar
   ========================================
 */
-header nav {
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   padding: 12px 35px 12px 24px;
   background-color: white;
 }
@@ -528,6 +541,16 @@ footer form textarea {
 }
 
 @media (min-width: 1024px) {
+  h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 60px;
+  }
+  p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+  }
   .desktop {
     display: unset;
   }
@@ -536,8 +559,8 @@ footer form textarea {
     Navigation bar
     ========================================
   */
-  header nav {
-    padding: 1.74% 10.69% 1.75% 10.76%;
+  header {
+    padding: 25px 10.69% 25px 10.76%;
   }
   header nav button {
     display: none;
@@ -548,6 +571,26 @@ footer form textarea {
   }
   header nav div a + a {
     margin-left: 32px;
+  }
+  /*
+    ========================================
+    Headline
+    ========================================
+  */
+  #headline {
+    background-image: url("../images/header-background-desktop.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-bottom: 20px solid white;
+    min-height: calc(100vh - var(--nav-height));
+    background-position: center;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 100px 18.06% 70px 18.06%;
+  }
+  #headline p + p {
+    font-size: 16px;
+    line-height: 24px;
   }
 }
 /*# sourceMappingURL=style.css.map */
