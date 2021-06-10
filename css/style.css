@@ -215,12 +215,18 @@ html {
 }
 
 h1 {
-  font-size: 40px;
   font-weight: 700;
+  font-size: 48px;
+  line-height: 60px;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 40px;
   line-height: 52px;
 }
 
-p {
+.p-main {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -313,32 +319,32 @@ header nav button:hover {
   background-image: url("../images/header-background.png");
   background-repeat: no-repeat;
   border-bottom-left-radius: 50px;
-}
-
-.about {
   background-color: white;
-  padding: 114px 24px;
 }
 
-.about > :nth-child(-n+3) {
-  padding-bottom: 12px;
+.about-description {
+  padding: 144px 24px 48px 24px;
 }
 
-.about .social {
+.about-description > * + * {
+  padding-top: 12px;
+}
+
+.about-description .social {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.about .social > :nth-child(-n+4) {
-  margin-right: 20px;
+.about-description .social li + li {
+  margin-left: 20px;
 }
 
-.about .social li a {
+.about-description .social li a {
   display: block;
 }
 
-.about .social li a img {
+.about-description .social li a img {
   vertical-align: middle;
 }
 
@@ -463,18 +469,22 @@ header nav button:hover {
   About Me
   ========================================
 */
-#about-me {
+#about {
+  padding-left: 24px;
+  padding-right: 24px;
+  background-color: white;
   padding-bottom: 12px;
   border-top-right-radius: 75px;
 }
 
-#about-me button {
+#about button {
   margin-top: 22px;
 }
 
 #skills {
-  padding-left: 36px;
-  padding-right: 36px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 24px;
   background-color: white;
   padding-bottom: 113.85px;
 }
@@ -490,8 +500,8 @@ header nav button:hover {
 }
 
 #skills .skill-card .skill-list {
-  padding-top: 12px;
-  padding-bottom: 12px;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 #skills .skill-card .skill-list .skill-item {
@@ -556,14 +566,9 @@ footer form textarea {
     General CSS
     ========================================
   */
-  h1 {
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 60px;
-  }
   p {
-    font-size: 20px;
     font-weight: 400;
+    font-size: 20px;
     line-height: 28px;
   }
   /*
@@ -579,6 +584,29 @@ footer form textarea {
     Reusable Flexbox classes
     ========================================
   */
+  .desktop-flex-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .desktop-flex-col {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .desktop-align-start {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
   .desktop-row-reverse {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
@@ -666,6 +694,41 @@ footer form textarea {
   }
   #works .work-card .work-info .tag-info {
     margin-bottom: 40px;
+  }
+  /*
+    ========================================
+    About Myself
+    ========================================
+  */
+  #about {
+    padding: 50px 10%;
+    min-height: calc(100vh - var(--nav-height));
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  #about .about-description {
+    width: 40%;
+    padding: 0;
+  }
+  #about #skills {
+    width: 55%;
+    padding: 0;
+  }
+  #about #skills .skill-card .skill-category {
+    padding-left: 24px;
+    padding-right: 40px;
+  }
+  #about #skills .skill-card .skill-list div + div {
+    margin-left: 12px;
+  }
+  #about #skills .skill-card .skill-list .skill-item {
+    width: 100px;
+    padding: 12px;
+    margin-bottom: 0;
+  }
+  #about #skills .skill-card .skill-list .skill-item img {
+    margin-right: 0;
+    margin-bottom: 16px;
   }
 }
 /*# sourceMappingURL=style.css.map */

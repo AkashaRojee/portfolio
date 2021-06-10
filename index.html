@@ -27,7 +27,7 @@
     <main>
 
       <!-- Headline -->
-      <section id="headline" class="flex-col about justify-center">
+      <section id="headline" class="flex-col about-description justify-center">
           <h1 class="flex-row blue-main">I’m Mariane<br>Glad to see you!</h1>
 
           <p class="flex-row blue-light">I’m a software developer! I can help you build a product , feature or website Look through some of my work and experience! If you like what you see and have a project you need coded, don’t hestiate to contact me.</p>
@@ -191,98 +191,104 @@
 
         </div>
         
-
       </section>
 
-      <!-- About Me -->
+      <!-- About Myself -->
       
-      <section id="about-me" class="flex-col about">
-        <h1 class="flex-row blue-main">About<br>Myself</h1>
+      <section id="about" class="flex-row wrap justify-between align-center">
 
-        <p class="flex-row blue-light">Hello I'm a software developer! I can help you build a product, feature or website Look through some of my work and experience! If you like what you see and have a project you need coded, don’t hestiate to contact me.</p>
+        <!-- About: Description -->
 
-        <p class="flex-row font-medium purple-light">LET’S CONNECT</p>
+        <div class="flex-col about-description">
+          <h2 class="flex-row blue-main">About<br>Myself</h2>
 
-        <!-- Social icons -->
-        <ul class="flex-row social">
-          <li>
-            <a href="https://github.com/AkashaRojee" target="_blank" rel="noopener noreferrer">
-              <img src="images/social-icons/github.png" alt="GitHub icon">
-            </a>
-          </li>
-          <li>
-            <a href="https://linkedin.com/in/AkashaRojee" target="_blank" rel="noopener noreferrer">
-              <img src="images/social-icons/linkedin.png" alt="Linkedin icon">
-            </a>
-          </li>
-          <li>
-            <a href="https://angel.co" target="_blank" rel="noopener noreferrer">
-              <img src="images/social-icons/angellist.png" alt="AngelList icon">
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/AkashaRojee" target="_blank" rel="noopener noreferrer">
-              <img src="images/social-icons/twitter.png" alt="Twitter icon">
-            </a>
-          </li>
-          <li>
-            <a href="https://medium.com/@Akasha.Rojee" target="_blank" rel="noopener noreferrer">
-              <img src="images/social-icons/medium.png" alt="Medium icon">
-            </a>
-          </li>
-        </ul>
+          <p class="flex-row p-main blue-light">Hello I'm a software developer! I can help you build a product, feature or website Look through some of my work and experience! If you like what you see and have a project you need coded, don’t hestiate to contact me.</p>
 
-        <div class="flex-row"><button type="button" class="btn font-medium">Get my resume</button></div>
+          <p class="flex-row p-main font-medium purple-light">LET’S CONNECT</p>
+
+          <!-- Social icons -->
+          <ul class="flex-row social">
+            <li>
+              <a href="https://github.com/AkashaRojee" target="_blank" rel="noopener noreferrer">
+                <img src="images/social-icons/github.png" alt="GitHub icon">
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/in/AkashaRojee" target="_blank" rel="noopener noreferrer">
+                <img src="images/social-icons/linkedin.png" alt="Linkedin icon">
+              </a>
+            </li>
+            <li>
+              <a href="https://angel.co" target="_blank" rel="noopener noreferrer">
+                <img src="images/social-icons/angellist.png" alt="AngelList icon">
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/AkashaRojee" target="_blank" rel="noopener noreferrer">
+                <img src="images/social-icons/twitter.png" alt="Twitter icon">
+              </a>
+            </li>
+            <li>
+              <a href="https://medium.com/@Akasha.Rojee" target="_blank" rel="noopener noreferrer">
+                <img src="images/social-icons/medium.png" alt="Medium icon">
+              </a>
+            </li>
+          </ul>
+
+          <div class="flex-row"><button type="button" class="btn font-medium">Get my resume</button></div>
+        </div>
+
+        <!-- About: Skills -->
+
+        <div id="skills" class="flex-col">
+
+          <div class="skill-card flex-col">
+
+            <div class="skill-category font-medium flex-row align-center justify-between">
+              <div>Languages</div>
+              <div><img src="images/arrow-expanded.png" alt="Click here to collapse"></div>
+            </div>
+
+            <div class="skill-list flex-col desktop-flex-row">
+              <div class="skill-item flex-row align-center desktop-flex-col desktop-align-start">
+                <img src="images/skills/js.png" alt="JS logo">
+                JavaScript
+              </div>
+              <div class="skill-item flex-row align-center desktop-flex-col desktop-align-start">
+                <img src="images/skills/html.png" alt="HTML logo">
+                HTML
+              </div>
+              <div class="skill-item flex-row align-center desktop-flex-col desktop-align-start">
+                <img src="images/skills/css.png" alt="CSS logo">
+                CSS
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Frameworks -->
+          <div class="skill-card flex-col">
+            <div class="skill-category font-medium flex-row align-center justify-between">
+              <div>Frameworks</div>
+              <div><img src="images/arrow-collapsed.png" alt="Click here to expand"></div>
+            </div>
+            <img src="images/horizontal-separator.png" alt="Separator">
+          </div>
+
+          <!-- Skills -->
+          <div class="skill-card flex-col">
+            <div class="skill-category font-medium flex-row align-center justify-between">
+              <div>Skills</div>
+              <div><img src="images/arrow-collapsed.png" alt="Click here to expand"></div>
+            </div>
+            <img src="images/horizontal-separator.png" alt="Separator">
+          </div>
+
+        </div>
         
       </section>
 
-      <!-- Skills -->
-
-      <section id="skills">
-
-        <div class="skill-card flex-col">
-
-          <div class="skill-category font-medium flex-row align-center justify-between">
-            <div>Languages</div>
-            <div><img src="images/arrow-expanded.png" alt="Click here to collapse"></div>
-          </div>
-
-          <div class="skill-list flex-col">
-            <div class="skill-item flex-row align-center">
-              <img src="images/skills/js.png" alt="JS logo">
-              JavaScript
-            </div>
-            <div class="skill-item flex-row align-center">
-              <img src="images/skills/html.png" alt="HTML logo">
-              HTML
-            </div>
-            <div class="skill-item flex-row align-center">
-              <img src="images/skills/css.png" alt="CSS logo">
-              CSS
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Frameworks -->
-        <div class="skill-card flex-col">
-          <div class="skill-category font-medium flex-row align-center justify-between">
-            <div>Frameworks</div>
-            <div><img src="images/arrow-collapsed.png" alt="Click here to expand"></div>
-          </div>
-          <img src="images/horizontal-separator.png" alt="Separator">
-        </div>
-
-        <!-- Skills -->
-        <div class="skill-card flex-col">
-          <div class="skill-category font-medium flex-row align-center justify-between">
-            <div>Skills</div>
-            <div><img src="images/arrow-collapsed.png" alt="Click here to expand"></div>
-          </div>
-          <img src="images/horizontal-separator.png" alt="Separator">
-        </div>
-
-      </section>
+      
 
       <!-- Contact Me -->
 

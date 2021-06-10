@@ -201,12 +201,18 @@ html {
 }
 
 h1 {
-  font-size: 40px;
   font-weight: 700;
+  font-size: 48px;
+  line-height: 60px;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 40px;
   line-height: 52px;
 }
 
-p {
+.p-main {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -303,24 +309,24 @@ header {
   background-image: url('../images/header-background.png');
   background-repeat: no-repeat;
   border-bottom-left-radius: 50px;
+  background-color: white;
 }
 
-.about {
-  background-color: white;
-  padding: 114px 24px;
+.about-description {
+  padding: 144px 24px 48px 24px;
 
-  >:nth-child(-n+3) {
-    padding-bottom: 12px;
+  > * + * {
+    padding-top: 12px;
   }
 
   .social {
     align-items: center;
 
-    >:nth-child(-n+4) {
-      margin-right: 20px;
-    }
+    & li {
+      & + li {
+        margin-left: 20px;
+      }
 
-    li {
       a {
         display: block;
 
@@ -450,7 +456,10 @@ header {
   ========================================
 */
 
-#about-me {
+#about {
+  padding-left: 24px;
+  padding-right: 24px;
+  background-color: white;
   padding-bottom: 12px;
   border-top-right-radius: 75px;
 
@@ -460,8 +469,9 @@ header {
 }
 
 #skills {
-  padding-left: 36px;
-  padding-right: 36px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 24px;
   background-color: white;
   padding-bottom: 113.85px;
 
@@ -477,8 +487,10 @@ header {
     }
 
     .skill-list {
-      padding-top: 12px;
-      padding-bottom: 12px;
+      margin-top: 12px;
+      margin-bottom: 12px;
+      // padding-top: 12px;
+      // padding-bottom: 12px;
 
       .skill-item {
         background-color: #f7f7f9;
@@ -550,15 +562,9 @@ footer {
     ========================================
   */
 
-  h1 {
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 60px;
-  }
-
   p {
-    font-size: 20px;
     font-weight: 400;
+    font-size: 20px;
     line-height: 28px;
   }
 
@@ -577,6 +583,20 @@ footer {
     Reusable Flexbox classes
     ========================================
   */
+
+  .desktop-flex-row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .desktop-flex-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .desktop-align-start {
+    align-items: flex-start;
+  }
 
   .desktop-row-reverse {
     flex-direction: row-reverse;
@@ -685,6 +705,55 @@ footer {
         }
       }
   
+    }
+  }
+
+  /*
+    ========================================
+    About Myself
+    ========================================
+  */
+
+  #about {
+    padding: 50px 10%;
+    min-height: calc(100vh - var(--nav-height));
+    box-sizing: border-box;
+
+
+    .about-description {
+      width: 40%;
+      padding: 0;
+    }
+    
+    #skills {
+      width: 55%;
+      padding: 0;
+
+      .skill-card {
+        .skill-category {
+          padding-left: 24px;
+          padding-right: 40px;
+        }
+        .skill-list {
+          div {
+            & + div {
+              margin-left: 12px;
+            }
+          }
+
+          .skill-item {
+            width: 100px;
+            padding: 12px;
+            margin-bottom: 0;
+
+            img {
+              margin-right: 0;
+              margin-bottom: 16px;
+            }
+          }
+        }
+      }
+      
     }
   }
 
