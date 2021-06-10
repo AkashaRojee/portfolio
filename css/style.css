@@ -226,7 +226,7 @@ h2 {
   line-height: 52px;
 }
 
-.p-main {
+p {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -320,6 +320,10 @@ header nav button:hover {
   background-repeat: no-repeat;
   border-bottom-left-radius: 50px;
   background-color: white;
+}
+
+.about-description {
+  padding: 114px 24px;
 }
 
 .about-description > * + * {
@@ -471,6 +475,10 @@ header nav button:hover {
   border-top-right-radius: 75px;
 }
 
+#about .about-description {
+  padding: 0;
+}
+
 #about button {
   margin-top: 22px;
 }
@@ -560,7 +568,7 @@ footer form textarea {
     General CSS
     ========================================
   */
-  p {
+  .p-big {
     font-weight: 400;
     font-size: 20px;
     line-height: 28px;
