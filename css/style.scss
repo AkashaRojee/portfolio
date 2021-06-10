@@ -313,7 +313,7 @@ header {
 }
 
 .about-description {
-  padding: 144px 24px 48px 24px;
+  
 
   > * + * {
     padding-top: 12px;
@@ -457,10 +457,11 @@ header {
 */
 
 #about {
-  padding-left: 24px;
-  padding-right: 24px;
+  padding: 114px 24px;
+  // padding-left: 24px;
+  // padding-right: 24px;
   background-color: white;
-  padding-bottom: 12px;
+  // padding-bottom: 12px;
   border-top-right-radius: 75px;
 
   button {
@@ -469,17 +470,18 @@ header {
 }
 
 #skills {
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 24px;
+  margin-top: 24px;
+  // padding-left: 12px;
+  // padding-right: 12px;
+  // padding-top: 24px;
   background-color: white;
-  padding-bottom: 113.85px;
+  // padding-bottom: 113.85px;
 
   .skill-card {
     .skill-category {
       font-size: 20px;
       line-height: 24px;
-      padding: 24px 39px 24px 12px;
+      padding: 24px 40px 24px 12px;
 
       img {
         cursor: pointer;
@@ -498,9 +500,13 @@ header {
         line-height: 20px;
         font-weight: 500;
         color: #253858;
-        padding: 9px 0 9.72px 12px;
+        padding: 9px 0 9px 12px;
         border-radius: 8px;
-        margin-bottom: 12px;
+
+        & + .skill-item {
+          margin-top: 12px;
+        }
+
 
         img {
           margin-right: 16px;
@@ -728,23 +734,18 @@ footer {
     #skills {
       width: 55%;
       padding: 0;
+      margin-top: 0;
 
       .skill-card {
-        .skill-category {
-          padding-left: 24px;
-          padding-right: 40px;
-        }
         .skill-list {
-          div {
-            & + div {
-              margin-left: 12px;
-            }
-          }
-
           .skill-item {
             width: 100px;
             padding: 12px;
             margin-bottom: 0;
+
+            & + .skill-item {
+              margin-left: 12px;
+            }
 
             img {
               margin-right: 0;
