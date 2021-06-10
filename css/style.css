@@ -540,7 +540,6 @@ footer p {
   line-height: 28px;
   text-align: center;
   margin-top: 12px;
-  margin-bottom: 48px;
 }
 
 footer form input,
@@ -551,15 +550,6 @@ footer form textarea {
   border: 1px solid #cfd8dc;
   font-size: 14px;
   line-height: 20px;
-}
-
-footer form #email {
-  margin-top: 20px;
-  margin-bottom: 18px;
-}
-
-footer form textarea {
-  margin-bottom: 22px;
 }
 
 @media (min-width: 1024px) {
@@ -603,6 +593,11 @@ footer form textarea {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  .desktop-justify-center {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .desktop-align-start {
     -webkit-box-align: start;
@@ -729,6 +724,29 @@ footer form textarea {
   #about #skills .skill-card .skill-list .skill-item img {
     margin-right: 0;
     margin-bottom: 16px;
+  }
+  /*
+    ========================================
+    Contact Me
+    ========================================
+  */
+  footer {
+    background-image: url("../images/contact-me-background-desktop.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: calc(100vh - var(--nav-height));
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 50px 28%;
+  }
+  footer > * + * {
+    margin-top: 12px;
+  }
+  footer form {
+    width: 100%;
+  }
+  footer form > * + * {
+    margin-top: 12px;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -539,7 +539,7 @@ footer {
     line-height: 28px;
     text-align: center;
     margin-top: 12px;
-    margin-bottom: 48px;
+    // margin-bottom: 48px;
   }
 
   form {
@@ -554,12 +554,12 @@ footer {
     }
 
     #email {
-      margin-top: 20px;
-      margin-bottom: 18px;
+      // margin-top: 20px;
+      // margin-bottom: 18px;
     }
 
     textarea {
-      margin-bottom: 22px;
+      // margin-bottom: 22px;
     }
   }
 }
@@ -602,6 +602,10 @@ footer {
   .desktop-flex-col {
     display: flex;
     flex-direction: column;
+  }
+
+  .desktop-justify-center {
+    justify-content: center;
   }
 
   .desktop-align-start {
@@ -763,4 +767,34 @@ footer {
     }
   }
 
+  /*
+    ========================================
+    Contact Me
+    ========================================
+  */
+
+  footer {
+    background-image: url('../images/contact-me-background-desktop.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: calc(100vh - var(--nav-height));
+    box-sizing: border-box;
+    padding: 50px 28%;
+
+    > * {
+      & + * {
+        margin-top: 12px;
+      }
+    }
+
+    form {
+      width: 100%;
+
+      > * {
+        & + * {
+          margin-top: 12px;
+        }
+      }
+    }
+  }
 }
