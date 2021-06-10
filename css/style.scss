@@ -383,7 +383,6 @@ header {
 
     .work-info {
       margin-top: 12px;
-      // margin-bottom: 12px;
 
       >:nth-child(-n+2) {
         margin-bottom: 12px;
@@ -458,10 +457,7 @@ header {
 
 #about {
   padding: 114px 24px;
-  // padding-left: 24px;
-  // padding-right: 24px;
   background-color: white;
-  // padding-bottom: 12px;
   border-top-right-radius: 75px;
 
   .about-description {
@@ -475,11 +471,7 @@ header {
 
 #skills {
   margin-top: 24px;
-  // padding-left: 12px;
-  // padding-right: 12px;
-  // padding-top: 24px;
   background-color: white;
-  // padding-bottom: 113.85px;
 
   .skill-card {
     .skill-category {
@@ -495,8 +487,6 @@ header {
     .skill-list {
       margin-top: 12px;
       margin-bottom: 12px;
-      // padding-top: 12px;
-      // padding-bottom: 12px;
 
       .skill-item {
         background-color: #f7f7f9;
@@ -529,20 +519,30 @@ header {
 footer {
   padding: 103px 24px 45px 24px;
   background-image: url('../images/contact-me-background.png');
+  background-size: contain;
+  background-position: 100%;
   background-repeat: no-repeat;
-  background-position: 100% 10%;
   background-color: #6070ff;
   border-top-left-radius: 75px;
+
+  > * {
+    & + * {
+      margin-top: 12px;
+    }
+  }
 
   p {
     font-size: 20px;
     line-height: 28px;
     text-align: center;
-    margin-top: 12px;
-    // margin-bottom: 48px;
   }
 
   form {
+    width: 100%;
+    > * {
+        margin-top: 12px;
+    }
+
     input,
     textarea {
       font-family: inherit;
@@ -551,15 +551,6 @@ footer {
       border: 1px solid #cfd8dc;
       font-size: 14px;
       line-height: 20px;
-    }
-
-    #email {
-      // margin-top: 20px;
-      // margin-bottom: 18px;
-    }
-
-    textarea {
-      // margin-bottom: 22px;
     }
   }
 }
@@ -776,25 +767,9 @@ footer {
   footer {
     background-image: url('../images/contact-me-background-desktop.png');
     background-size: cover;
-    background-repeat: no-repeat;
+    background-position: 100% -10%;
     min-height: calc(100vh - var(--nav-height));
     box-sizing: border-box;
     padding: 50px 28%;
-
-    > * {
-      & + * {
-        margin-top: 12px;
-      }
-    }
-
-    form {
-      width: 100%;
-
-      > * {
-        & + * {
-          margin-top: 12px;
-        }
-      }
-    }
   }
 }

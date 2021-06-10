@@ -529,16 +529,28 @@ header nav button:hover {
 footer {
   padding: 103px 24px 45px 24px;
   background-image: url("../images/contact-me-background.png");
+  background-size: contain;
+  background-position: 100%;
   background-repeat: no-repeat;
-  background-position: 100% 10%;
   background-color: #6070ff;
   border-top-left-radius: 75px;
+}
+
+footer > * + * {
+  margin-top: 12px;
 }
 
 footer p {
   font-size: 20px;
   line-height: 28px;
   text-align: center;
+}
+
+footer form {
+  width: 100%;
+}
+
+footer form > * {
   margin-top: 12px;
 }
 
@@ -733,20 +745,11 @@ footer form textarea {
   footer {
     background-image: url("../images/contact-me-background-desktop.png");
     background-size: cover;
-    background-repeat: no-repeat;
+    background-position: 100% -10%;
     min-height: calc(100vh - var(--nav-height));
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     padding: 50px 28%;
-  }
-  footer > * + * {
-    margin-top: 12px;
-  }
-  footer form {
-    width: 100%;
-  }
-  footer form > * + * {
-    margin-top: 12px;
   }
 }
 /*# sourceMappingURL=style.css.map */
