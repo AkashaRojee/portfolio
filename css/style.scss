@@ -312,10 +312,17 @@ header {
   background-color: white;
 }
 
+/*
+  ========================================
+  Reusable class for description in About section
+  ========================================
+*/
+
 .about-description {
   padding: 114px 24px;
 
-  > * + * {
+  .about-p,
+  ul {
     padding-top: 12px;
   }
 
@@ -410,7 +417,7 @@ header {
       .tag-info {
         margin-top: 12px;
         margin-bottom: 16px;
-  
+
         span {
           margin-right: 8px;
           margin-bottom: 8px;
@@ -501,7 +508,6 @@ header {
           margin-top: 12px;
         }
 
-
         img {
           margin-right: 16px;
         }
@@ -525,10 +531,9 @@ footer {
   background-color: #6070ff;
   border-top-left-radius: 75px;
 
-  > * {
-    & + * {
-      margin-top: 12px;
-    }
+  p,
+  form {
+    margin-top: 12px;
   }
 
   p {
@@ -539,8 +544,9 @@ footer {
 
   form {
     width: 100%;
+
     > * {
-        margin-top: 12px;
+      margin-top: 12px;
     }
 
     input,
@@ -556,7 +562,6 @@ footer {
 }
 
 @media (min-width: 1024px) {
-
   /*
     ========================================
     General CSS
@@ -616,7 +621,7 @@ footer {
   header {
     padding: 25px 10.69% 25px 10.76%;
 
-    nav {    
+    nav {
       button {
         display: none;
       }
@@ -667,24 +672,24 @@ footer {
   #works {
     grid-row-gap: 142px;
     padding: 142px;
-  
+
     .work-card {
       padding: 24px;
       box-sizing: border-box;
-  
+
       img {
-       width: 50%;
+        width: 50%;
       }
-  
+
       .work-info {
         width: 45%;
-  
+
         .title {
           font-size: 40px;
           line-height: 52px;
           margin-bottom: 20px;
         }
-  
+
         .subtitle {
           margin-bottom: 32px;
 
@@ -698,7 +703,7 @@ footer {
             }
           }
         }
-  
+
         .description {
           font-size: 16px;
           line-height: 24px;
@@ -709,7 +714,6 @@ footer {
           margin-bottom: 40px;
         }
       }
-  
     }
   }
 
@@ -724,12 +728,11 @@ footer {
     min-height: calc(100vh - var(--nav-height));
     box-sizing: border-box;
 
-
     .about-description {
       width: 40%;
       padding: 0;
     }
-    
+
     #skills {
       width: 55%;
       padding: 0;
@@ -754,7 +757,6 @@ footer {
           }
         }
       }
-      
     }
   }
 
