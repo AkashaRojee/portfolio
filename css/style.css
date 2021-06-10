@@ -725,28 +725,5 @@ footer form textarea {
     margin-right: 0;
     margin-bottom: 16px;
   }
-  /*
-    ========================================
-    Contact Me
-    ========================================
-  */
-  footer {
-    background-image: url("../images/contact-me-background-desktop.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: calc(100vh - var(--nav-height));
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    padding: 50px 28%;
-  }
-  footer > * + * {
-    margin-top: 12px;
-  }
-  footer form {
-    width: 100%;
-  }
-  footer form > * + * {
-    margin-top: 12px;
-  }
 }
 /*# sourceMappingURL=style.css.map */

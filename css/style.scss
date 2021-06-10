@@ -766,35 +766,4 @@ footer {
       
     }
   }
-
-  /*
-    ========================================
-    Contact Me
-    ========================================
-  */
-
-  footer {
-    background-image: url('../images/contact-me-background-desktop.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: calc(100vh - var(--nav-height));
-    box-sizing: border-box;
-    padding: 50px 28%;
-
-    > * {
-      & + * {
-        margin-top: 12px;
-      }
-    }
-
-    form {
-      width: 100%;
-
-      > * {
-        & + * {
-          margin-top: 12px;
-        }
-      }
-    }
-  }
 }
