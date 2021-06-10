@@ -27,6 +27,12 @@ Things done so far in the project:
 * Use HTML5 validation
 * Collect form data using Formspree
 
+#### 4. Build desktop version
+
+* Use media query for desktop view
+* Use desktop-specific classes to show/hide elements depending on view
+* Display desktop sections fully in viewport height
+
 ## Built With
 
 - Major languages: HTML, CSS
@@ -45,6 +51,12 @@ Use the following command in your terminal:
 * **To clone the main project**
 ```
 git clone https://github.com/AkashaRojee/portfolio
+```
+
+* **To clone the desktop-version branch**
+
+```
+git clone -b desktop-version https://github.com/AkashaRojee/portfolio
 ```
 
 * **To clone the contact-form branch**
@@ -67,11 +79,11 @@ git clone -b mobile-skeleton https://github.com/AkashaRojee/portfolio
 
 **Notes:**
 
-* So far, only the mobile version has been built. Please, view the website in mobile view.
+* Both the mobile and the desktop version have been built. The website can be viewed in either view.
 
-* Main does not contain the contact form yet.
+* Main only contains the mobile version and not the desktop version yet.
 
-* Contact form is currently under review.
+* Desktop version is currently under review.
 
 ## Authors
 
