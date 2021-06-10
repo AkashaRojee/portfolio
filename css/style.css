@@ -716,6 +716,7 @@ footer form textarea {
   }
   #about #skills .skill-card .skill-list .skill-item + .skill-item {
     margin-left: 12px;
+    margin-top: 0;
   }
   #about #skills .skill-card .skill-list .skill-item img {
     margin-right: 0;
