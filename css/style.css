@@ -643,19 +643,16 @@ footer form textarea {
   header nav div a {
     color: inherit;
     text-decoration: none;
-    -webkit-transition-property: -webkit-box-shadow;
-    transition-property: -webkit-box-shadow;
-    transition-property: box-shadow;
-    transition-property: box-shadow, -webkit-box-shadow;
-    -webkit-transition-duration: 2s;
-            transition-duration: 2s;
+    -webkit-transition-property: text-shadow;
+    transition-property: text-shadow;
+    -webkit-transition-duration: 1s;
+            transition-duration: 1s;
   }
   header nav div a + a {
     margin-left: 32px;
   }
   header nav div a:hover {
-    -webkit-box-shadow: 0px 8px 16px #344563;
-            box-shadow: 0px 8px 16px #344563;
+    text-shadow: 0px 0px 20px #172b4d;
   }
   /*
     ========================================

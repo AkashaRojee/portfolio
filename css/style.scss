@@ -630,15 +630,15 @@ footer {
         a {
           color: inherit;
           text-decoration: none;
-          transition-property: box-shadow;
-          transition-duration: 2s;
+          transition-property: text-shadow;
+          transition-duration: 1s;
 
           & + a {
             margin-left: 32px;
           }
 
           &:hover {
-            box-shadow: 0px 8px 16px #344563;
+            text-shadow: 0px 0px 20px #172b4d;
           }
         }
       }
