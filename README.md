@@ -21,7 +21,7 @@ Things done so far in the project:
 * Use Grid alongside Flexbox for positioning
 * Add button hover and pressed effects
 
-#### 3. Build contact form
+#### 3. Build contact form (pair programming)
 
 * Pair program with a coding partner
 * Use HTML5 validation
@@ -32,6 +32,15 @@ Things done so far in the project:
 * Use media query for desktop view
 * Use desktop-specific classes to show/hide elements depending on view
 * Display desktop sections fully in viewport height
+
+### 4.5 Add effects (pair programming)
+
+* Use CSS transitions
+* Use CSS animations
+
+### 5. Deploy
+
+* Use GitHub pages to deploy website
 
 ## Built With
 
@@ -51,6 +60,18 @@ Use the following command in your terminal:
 * **To clone the main project**
 ```
 git clone https://github.com/AkashaRojee/portfolio
+```
+
+* **To clone the deploy branch**
+
+```
+git clone -b deploy https://github.com/AkashaRojee/portfolio
+```
+
+* **To clone the effects branch**
+
+```
+git clone -b effects https://github.com/AkashaRojee/portfolio
 ```
 
 * **To clone the desktop-version branch**
@@ -81,9 +102,9 @@ git clone -b mobile-skeleton https://github.com/AkashaRojee/portfolio
 
 * Both the mobile and the desktop version have been built. The website can be viewed in either view.
 
-* Main only contains the mobile version and not the desktop version yet.
+* Main only contains both the mobile version and the desktop version, including effects.
 
-* Desktop version is currently under review.
+* Deploy is currently under review.
 
 ## Authors
 
