@@ -1,0 +1,28 @@
+{
+  "name": "portfolio",
+  "version": "0.0.7",
+  "description": "Portfolio of projects built at Microverse by Akasha Rojee",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AkashaRojee/portfolio.git"
+  },
+  "author": "Akasha Rojee <Akasha.Rojee@gmail.com> (https://AkashaRojee.codes)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AkashaRojee/portfolio/issues"
+  },
+  "homepage": "https://github.com/AkashaRojee/portfolio#readme",
+  "devDependencies": {
+    "eslint": "^7.29.0",
+    "hint": "^6.1.4",
+    "lighthouse": "^8.0.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.19.0"
+  }
+}
