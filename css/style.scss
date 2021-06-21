@@ -313,8 +313,8 @@ header {
       left: 0;
       padding: 18px 38px 554px 28px;
       box-sizing: border-box;
-      backdrop-filter: blur(10px);;
-      
+      backdrop-filter: blur(10px);
+
       button {
         float: right;
       }
@@ -380,6 +380,10 @@ header {
   Works
   ========================================
 */
+
+.hidden {
+  display: none;
+}
 
 #works {
   grid-template-rows: auto auto auto;
