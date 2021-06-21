@@ -44,6 +44,4 @@ function checkView() {
 
 //Check whenever view is changed
 checkView(hamburgerView);
-hamburgerView.addEventListener("change", checkView)
-
-
+hamburgerView.addEventListener("change", checkView);
