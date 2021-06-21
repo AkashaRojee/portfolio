@@ -212,6 +212,12 @@ h2 {
   line-height: 52px;
 }
 
+h3 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44px;
+}
+
 p {
   font-size: 16px;
   font-weight: 400;
@@ -297,7 +303,7 @@ header {
       }
     }
 
-    #mobile-menu {
+    .mobile-menu {
       display: unset;
       background: rgba(96, 112, 255, 0.95);
       position: absolute;
@@ -305,26 +311,18 @@ header {
       width: 100%;
       top: 0;
       left: 0;
-      padding: 106px 50px 554px 28px;  
+      padding: 18px 38px 554px 28px;
       box-sizing: border-box;
       
-      img {
-        position: absolute;
-        right: 50px;
-        top: 50px;
+      button {
+        float: right;
       }
 
       a {
         display: block;
-        font-weight: 600px;
-        font-size: 32px;
-        line-height: 44px;
         color: white;
         text-decoration: none;
-        display: 100%;
-        & + a {
-          margin-top: 40px;
-        }
+        margin-top: 40px;
       }
     }
 
