@@ -48,14 +48,24 @@ Things done so far in the project:
 * Add a web data stream
 * Set up data collection using a global site tag
 
+### 6. Evaluate accessibility
+
+* To do
+
+### 7. Add mobile menu (pair programming)
+
+* Use JavaScript DOM manipulation to open/close menu in mobile view
+* Use JavaScript media query
+* Apply JavaScript linting with ESLint
+
 ## Built With
 
-- Major languages: HTML, CSS
-- Technologies used: Lighthouse, Webhint, Stylelint
+- Major languages: HTML, CSS, JS
+- Technologies used: Lighthouse, Webhint, Stylelint, ESLint
 
 ## Live Demo
 
-[Live Demo Link](https://akasharojee.github.io/portfolio/)
+[Live Demo Link](https://akasharojee.codes/portfolio/)
 
 ## Getting Started
 
@@ -66,6 +76,11 @@ Use the following command in your terminal:
 * **To clone the main project**
 ```
 git clone https://github.com/AkashaRojee/portfolio
+```
+
+* **To clone the mobile-menu branch**
+```
+git clone -b mobile-menu https://github.com/AkashaRojee/portfolio
 ```
 
 * **To clone the deploy branch**
@@ -108,9 +123,9 @@ git clone -b mobile-skeleton https://github.com/AkashaRojee/portfolio
 
 * Both the mobile and the desktop version have been built. The website can be viewed in either view.
 
-* Main only contains both the mobile version and the desktop version, including effects.
+* Main does not yet contain the mobile menu.
 
-* Deploy is currently under review.
+* Mobile menu is currently under review.
 
 ## Authors
 
@@ -123,6 +138,10 @@ git clone -b mobile-skeleton https://github.com/AkashaRojee/portfolio
 👤 **Damilare Akintoye**
 
 - GitHub: [@dami1080](https://github.com/dami1080)
+
+👤 **Yahya El Ganayni**
+
+- GitHub: [@yahyaelganyni1](https://github.com/yahyaelganyni1)
 
 ## 🤝 Contributing
 
