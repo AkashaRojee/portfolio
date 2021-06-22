@@ -45,23 +45,3 @@ function checkView() {
 // Check whenever view is changed
 checkView(hamburgerView);
 hamburgerView.addEventListener('change', checkView);
-
-// popup menu
-function Project(img, title, companyName, role, year, description, technology) {
-  this.img = img;
-  this.title = title;
-  this.companyName = companyName;
-  this.role = role;
-  this.year = year;
-  this.description = description;
-  this.technology = technology;
-}
-
-let projects = [
-  new Project('tonic.png', 'Tonic', 'CANOPY', 'back-end dev', '2015', 'A daily selection of privately personalized reads; no accounts or sign-ups required.', ['HTML', 'CSS', 'javascript']),
-  new Project('tonic.png', 'Tonic', 'CANOPY', 'back-end dev', '2015', 'A daily selection of privately personalized reads; no accounts or sign-ups required.', ['HTML', 'CSS', 'javascript']),
-  new Project('tonic.png', 'Tonic', 'CANOPY', 'back-end dev', '2015', 'A daily selection of privately personalized reads; no accounts or sign-ups required.', ['HTML', 'CSS', 'javascript']),
-  new Project('tonic.png', 'Tonic', 'CANOPY', 'back-end dev', '2015', 'A daily selection of privately personalized reads; no accounts or sign-ups required.', ['HTML', 'CSS', 'javascript']),
-];
-
-console.log(projects);
