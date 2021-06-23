@@ -39,11 +39,13 @@ const workHeading = createElement('h2', 'hidden', {}, 'Works');
 workSection.appendChild(workHeading);
 
 //Create HTML for each work-card container
-works.forEach(work => {
+works.forEach((work, index) => {
 
   //Create card elements individually 
   let card = {
-    'work-card' : createElement('div', 'work-card flex-row justify-between wrap'),
+    'work-card' : createElement('div',
+                                'work-card flex-row justify-between wrap' +
+                                  (index % 2 === 0 ? '' : ' desktop-row-reverse')),
     'work-image' : createElement('div', 'work-image flex-col justify-center'),
     'image' : createElement('img', 'image',
                             {'src' : '/images/works/' + work.image + '.png',
