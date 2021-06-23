@@ -1,5 +1,6 @@
 let works = [];
 const workSection = document.querySelector('#works');
+const body = document.querySelector('body');
 
 //Constructor for each work
 function Work(...workData) {
@@ -10,17 +11,6 @@ function Work(...workData) {
   this.year = workData[4];
   this.description = workData[5];
   this.technologies = workData[6];
-}
-
-//Create HTML element of given type and add classes, attributes and textContent (where applicable)
-function createElement(elementType, classNames, attributes = {}, textContent = '') {
-  let elementObject = document.createElement(elementType);
-  elementObject.classList.add(...(classNames.split(' ')));
-  Object.keys(attributes).forEach(attribute => {
-    elementObject.setAttribute(attribute, attributes[attribute]);
-  });
-  elementObject.textContent = textContent;
-  return elementObject;
 }
 
 //Create array of Work objects
@@ -34,43 +24,49 @@ works = [
   new Work('uber-navigation', 'Uber Navigation', 'UBER', 'Lead Developer', '2015', 'A smart assistant to make driving more safe, efficient, and fun by unlocking your most expensive computer: your car.', ['html', 'ruby on rails', 'css', 'javascript'])
 ];
 
-//Create HTML for works container
-const workHeading = createElement('h2', 'hidden', {}, 'Works');
-workSection.appendChild(workHeading);
+//Create HTML element of given type and add classes, attributes and textContent (where applicable)
+function createElement(elementType, classNames, attributes = {}, textContent = '') {
+  let elementObject = document.createElement(elementType);
+  elementObject.classList.add(...(classNames.split(' ')));
+  Object.keys(attributes).forEach(attribute => {
+    elementObject.setAttribute(attribute, attributes[attribute]);
+  });
+  elementObject.textContent = textContent;
+  return elementObject;
+}
 
-//Create HTML for each work-card container
-works.forEach((work, index) => {
-
-  //Create card elements individually 
-  let card = {
+//Create card elements
+function createCard(index) {
+  return {
     'work-card' : createElement('div',
                                 'work-card flex-row justify-between wrap' +
                                   (index % 2 === 0 ? '' : ' desktop-row-reverse')),
     'work-image' : createElement('div', 'work-image flex-col justify-center'),
     'image' : createElement('img', 'image',
-                            {'src' : '/images/works/' + work.image + '.png',
-                              'alt' : 'Screenshot of ' + work.title}),
+                            {'src' : '/images/works/' + works[index].image + '.png',
+                              'alt' : 'Screenshot of ' + works[index].title}),
     'work-info' : createElement('div', 'work-info flex-col'),
-    'title' : createElement('span', 'title flex-row blue-main span', {}, work.title),
+    'title' : createElement('span', 'title flex-row blue-main span', {}, works[index].title),
     'subtitle' : createElement('div', 'subtitle flex-row align-center'),
-    'client' : createElement('span', 'client blue-light', {}, work.client),
+    'client' : createElement('span', 'client blue-light', {}, works[index].client),
     'separator' : createElement('div', 'separator'),
     'separator-image' : createElement('img', 'separator-image',
-                                     {'src' : 'images/works/circle.png',
+                                    {'src' : 'images/works/circle.png',
                                       'alt' : 'Separator'}),
-    'role' : createElement('span', 'role grey-main', {}, work.role),
-    'year' : createElement('span', 'year grey-main', {}, work.year),
+    'role' : createElement('span', 'role grey-main', {}, works[index].role),
+    'year' : createElement('span', 'year grey-main', {}, works[index].year),
     'work-details' : createElement('div', 'work-details flex-row wrap'),
-    'work-description' : createElement('p', 'work-description flex-col blue-light', {}, work.description),
+    'work-description' : createElement('p', 'work-description flex-col blue-light', {}, works[index].description),
     'work-tags-buttons' : createElement('div', 'work-tags-buttons flex-col'),
     'tag-info' : createElement('div', 'tag-info flex-row font-medium purple-main wrap'),
     'work-technology': createElement('span', 'work-technology'),
     'work-buttons' : createElement('div', 'work-buttons'),
     'btn' : createElement('button', 'btn font-medium', {}, 'See Project')
   };
+}
 
-  //Append card elements to required parents
-
+//Append card elements to required parents
+function structureCard(card, index) {
   workSection.appendChild(card['work-card']);
   card['work-card'].append(card['work-image'], card['work-info']);
   card['work-image'].appendChild(card['image']);
@@ -85,13 +81,40 @@ works.forEach((work, index) => {
   card['work-tags-buttons'].append(card['tag-info'], card['work-buttons']);
 
   let spans = [];
-  work.technologies.forEach((tech, index) => {
+  works[index].technologies.forEach(tech => {
     let span = card['work-technology'].cloneNode(true);
     span.textContent = tech;
     spans.push(span);
   });
   card['tag-info'].append(...spans);
 
-  card['work-buttons'].appendChild(card['btn']);
+  card['work-buttons'].appendChild(card['btn'])
+  return card;
+}
 
-});
+function showModal(index) {
+  let modalCard = createCard(index);
+  modalCard = structureCard(modalCard, index);
+  modalCard['work-card'].classList.add('modal');
+  body.append(modalCard['work-card']);
+  body.querySelectorAll(':not(.modal, .modal *)').forEach(element => {
+    element.style.filter = 'brightness(50%)';
+  })
+}
+
+//Create HTML for works container and for each work card
+//and add event listener to See Project button
+function populateWorkSection() {
+  const workHeading = createElement('h2', 'hidden', {}, 'Works');
+  workSection.appendChild(workHeading);
+  works.forEach((work, index) => {
+    let card = createCard(index);
+    card = structureCard(card, index);
+    card['btn'].addEventListener('click', function() {
+      showModal(index);
+    });
+  });
+}
+
+//Create HTML for work section after whole page has loaded
+window.addEventListener('load', populateWorkSection);

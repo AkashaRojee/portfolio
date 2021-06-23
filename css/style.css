@@ -395,6 +395,100 @@ header nav .mobile-menu a {
   display: none;
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 90vw;
+  margin-top: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.work-card {
+  padding: 16px 16px 28px 16px;
+  border: 1px solid #dfe1e6;
+  border-radius: 16px;
+  background-color: white;
+}
+
+.work-card:nth-child(2) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: work1;
+}
+
+.work-card:nth-child(3) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: work2;
+}
+
+.work-card:nth-child(4) {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: work3;
+}
+
+.work-card:nth-child(5) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: work4;
+}
+
+.work-card .work-image {
+  width: 100%;
+  height: auto;
+}
+
+.work-card .work-info {
+  margin-top: 12px;
+}
+
+.work-card .work-info > :nth-child(-n+2) {
+  margin-bottom: 20px;
+}
+
+.work-card .work-info .title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+}
+
+.work-card .work-info .subtitle div {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+  margin-right: 12px;
+  margin-left: 12px;
+}
+
+.work-card .work-info .work-details .work-description {
+  font-size: 15px;
+  width: 100%;
+}
+
+.work-card .work-info .work-details .work-tags-buttons {
+  width: 100%;
+}
+
+.work-card .work-info .work-details .work-tags-buttons .tag-info {
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+.work-card .work-info .work-details .work-tags-buttons .tag-info span {
+  margin-right: 8px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 4px 12px;
+  border-radius: 8px;
+  background-color: #ebebff;
+}
+
 #works {
   -ms-grid-rows: auto auto auto;
       grid-template-rows: auto auto auto;
@@ -409,88 +503,6 @@ header nav .mobile-menu a {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: header;
-}
-
-#works .work-card {
-  padding: 16px 16px 28px 16px;
-  border: 1px solid #dfe1e6;
-  border-radius: 16px;
-  background-color: white;
-}
-
-#works .work-card:nth-child(2) {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: work1;
-}
-
-#works .work-card:nth-child(3) {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  grid-area: work2;
-}
-
-#works .work-card:nth-child(4) {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  grid-area: work3;
-}
-
-#works .work-card:nth-child(5) {
-  -ms-grid-row: 5;
-  -ms-grid-column: 1;
-  grid-area: work4;
-}
-
-#works .work-card .work-image {
-  width: 100%;
-  height: auto;
-}
-
-#works .work-card .work-info {
-  margin-top: 12px;
-}
-
-#works .work-card .work-info > :nth-child(-n+2) {
-  margin-bottom: 20px;
-}
-
-#works .work-card .work-info .title {
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 44px;
-}
-
-#works .work-card .work-info .subtitle div {
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 16px;
-  margin-right: 12px;
-  margin-left: 12px;
-}
-
-#works .work-card .work-info .work-details .work-description {
-  font-size: 15px;
-  width: 100%;
-}
-
-#works .work-card .work-info .work-details .work-tags-buttons {
-  width: 100%;
-}
-
-#works .work-card .work-info .work-details .work-tags-buttons .tag-info {
-  margin-top: 12px;
-  margin-bottom: 24px;
-}
-
-#works .work-card .work-info .work-details .work-tags-buttons .tag-info span {
-  margin-right: 8px;
-  margin-bottom: 8px;
-  font-size: 12px;
-  line-height: 16px;
-  padding: 4px 12px;
-  border-radius: 8px;
-  background-color: #ebebff;
 }
 
 .btn {

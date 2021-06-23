@@ -385,6 +385,94 @@ header {
   display: none;
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  margin-top: 30px;
+  box-sizing: border-box;
+}
+
+.work-card {
+  padding: 16px 16px 28px 16px;
+  border: 1px solid #dfe1e6;
+  border-radius: 16px;
+  background-color: white;
+
+  &:nth-child(2) {
+    grid-area: work1;
+  }
+
+  &:nth-child(3) {
+    grid-area: work2;
+  }
+
+  &:nth-child(4) {
+    grid-area: work3;
+  }
+
+  &:nth-child(5) {
+    grid-area: work4;
+  }
+
+  .work-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .work-info {
+    margin-top: 12px;
+
+    >:nth-child(-n+2) {
+      margin-bottom: 20px;
+    }
+
+    .title {
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 44px;
+    }
+
+    .subtitle {
+      div {
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 16px;
+        margin-right: 12px;
+        margin-left: 12px;
+      }
+    }
+
+    .work-details {
+      .work-description {
+        font-size: 15px;
+        width: 100%;
+      }
+
+      .work-tags-buttons {
+        width: 100%;
+
+        .tag-info {
+          margin-top: 12px;
+          margin-bottom: 24px;
+  
+          span {
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-size: 12px;
+            line-height: 16px;
+            padding: 4px 12px;
+            border-radius: 8px;
+            background-color: #ebebff;
+          }
+        }
+      }
+    }
+  }
+}
+
 #works {
   grid-template-rows: auto auto auto;
   grid-template-columns: 100%;
@@ -401,83 +489,9 @@ header {
     grid-area: header;
   }
 
-  .work-card {
-    padding: 16px 16px 28px 16px;
-    border: 1px solid #dfe1e6;
-    border-radius: 16px;
-    background-color: white;
-
-    &:nth-child(2) {
-      grid-area: work1;
-    }
-
-    &:nth-child(3) {
-      grid-area: work2;
-    }
-
-    &:nth-child(4) {
-      grid-area: work3;
-    }
-
-    &:nth-child(5) {
-      grid-area: work4;
-    }
-
-    .work-image {
-      width: 100%;
-      height: auto;
-    }
-
-    .work-info {
-      margin-top: 12px;
-
-      >:nth-child(-n+2) {
-        margin-bottom: 20px;
-      }
-
-      .title {
-        font-weight: 700;
-        font-size: 32px;
-        line-height: 44px;
-      }
-
-      .subtitle {
-        div {
-          font-weight: 600;
-          font-size: 13px;
-          line-height: 16px;
-          margin-right: 12px;
-          margin-left: 12px;
-        }
-      }
-
-      .work-details {
-        .work-description {
-          font-size: 15px;
-          width: 100%;
-        }
   
-        .work-tags-buttons {
-          width: 100%;
+
   
-          .tag-info {
-            margin-top: 12px;
-            margin-bottom: 24px;
-    
-            span {
-              margin-right: 8px;
-              margin-bottom: 8px;
-              font-size: 12px;
-              line-height: 16px;
-              padding: 4px 12px;
-              border-radius: 8px;
-              background-color: #ebebff;
-            }
-          }
-        }
-      }
-    }
-  }
 }
 
 .btn {
