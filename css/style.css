@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
-
 /*
   ========================================
   CSS reset
@@ -131,8 +130,7 @@ q {
   quotes: none;
 }
 
-blockquote::before,
-blockquote::after,
+blockquote::before, blockquote::after,
 q::before,
 q::after {
   content: '';
@@ -151,43 +149,45 @@ table {
 */
 .flex-row {
   display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .flex-col {
   display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .justify-center {
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .justify-between {
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .align-center {
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .wrap {
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 /*
@@ -326,9 +326,9 @@ header nav .mobile-menu {
   left: 0;
   padding: 18px 38px 554px 28px;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
 
 header nav .mobile-menu button {
@@ -370,8 +370,8 @@ header nav .mobile-menu a {
 
 .about-description .social {
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .about-description .social li + li {
@@ -397,46 +397,52 @@ header nav .mobile-menu a {
 
 #works {
   -ms-grid-rows: auto auto auto;
-  grid-template-rows: auto auto auto;
+      grid-template-rows: auto auto auto;
   -ms-grid-columns: 100%;
-  grid-template-columns: 100%;
-  grid-template-areas: "work1" "work2" "work3" "work4";
+      grid-template-columns: 100%;
+      grid-template-areas: "header" "work1" "work2" "work3" "work4";
   grid-row-gap: 88px;
   padding: 114px 24px;
 }
 
-#works > :nth-child(1) {
+#works h2 {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
-  grid-area: work1;
-}
-
-#works > :nth-child(2) {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: work2;
-}
-
-#works > :nth-child(3) {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  grid-area: work3;
-}
-
-#works > :nth-child(4) {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  grid-area: work4;
+  grid-area: header;
 }
 
 #works .work-card {
-  padding: 16px 16px 24px 16px;
+  padding: 16px 16px 28px 16px;
   border: 1px solid #dfe1e6;
   border-radius: 16px;
   background-color: white;
 }
 
-#works .work-card img {
+#works .work-card:nth-child(2) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: work1;
+}
+
+#works .work-card:nth-child(3) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: work2;
+}
+
+#works .work-card:nth-child(4) {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: work3;
+}
+
+#works .work-card:nth-child(5) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: work4;
+}
+
+#works .work-card .work-image {
   width: 100%;
 }
 
@@ -445,7 +451,7 @@ header nav .mobile-menu a {
 }
 
 #works .work-card .work-info > :nth-child(-n+2) {
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 
 #works .work-card .work-info .title {
@@ -459,18 +465,24 @@ header nav .mobile-menu a {
   font-size: 13px;
   line-height: 16px;
   margin-right: 12px;
+  margin-left: 12px;
 }
 
-#works .work-card .work-info .description {
+#works .work-card .work-info .work-details .work-description {
   font-size: 15px;
+  width: 100%;
 }
 
-#works .work-card .work-info .tag-info {
+#works .work-card .work-info .work-details .work-tags-buttons {
+  width: 100%;
+}
+
+#works .work-card .work-info .work-details .work-tags-buttons .tag-info {
   margin-top: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
-#works .work-card .work-info .tag-info span {
+#works .work-card .work-info .work-details .work-tags-buttons .tag-info span {
   margin-right: 8px;
   margin-bottom: 8px;
   font-size: 12px;
@@ -496,14 +508,14 @@ header nav .mobile-menu a {
   background-color: #6070ff;
   border-color: #6070ff;
   -webkit-box-shadow: 0 8px 16px 0 #4053fc3d;
-  box-shadow: 0 8px 16px 0 #4053fc3d;
+          box-shadow: 0 8px 16px 0 #4053fc3d;
 }
 
 .btn:active {
   background-color: #2230d2;
   border-color: #2230d2;
   -webkit-box-shadow: none;
-  box-shadow: none;
+          box-shadow: none;
 }
 
 /*
@@ -618,7 +630,6 @@ footer form textarea {
     font-size: 20px;
     line-height: 28px;
   }
-
   /*
     ========================================
     Reusable classes
@@ -627,7 +638,6 @@ footer form textarea {
   .desktop {
     display: unset;
   }
-
   /*
     ========================================
     Reusable Flexbox classes
@@ -635,41 +645,38 @@ footer form textarea {
   */
   .desktop-flex-row {
     display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
-
   .desktop-flex-col {
     display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
-
   .desktop-justify-center {
     -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
-
   .desktop-align-start {
     -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
-
   .desktop-row-reverse {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
-    -ms-flex-direction: row-reverse;
-    flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
   }
-
   /*
     ========================================
     Navigation bar
@@ -678,28 +685,23 @@ footer form textarea {
   header {
     padding: 25px 10.69% 25px 10.76%;
   }
-
   header nav button {
     display: none;
   }
-
   header nav div a {
     color: inherit;
     text-decoration: none;
     -webkit-transition-property: text-shadow;
     transition-property: text-shadow;
     -webkit-transition-duration: 1s;
-    transition-duration: 1s;
+            transition-duration: 1s;
   }
-
   header nav div a + a {
     margin-left: 32px;
   }
-
   header nav div a:hover {
     text-shadow: 0 0 20px #172b4d;
   }
-
   /*
     ========================================
     Headline
@@ -713,48 +715,41 @@ footer form textarea {
     min-height: calc(100vh - var(--nav-height));
     background-position: center;
     -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+            box-sizing: border-box;
     padding: 100px 18.06% 70px 18.06%;
   }
-
   #headline h1 {
     -webkit-animation-name: h1-slide-in;
-    animation-name: h1-slide-in;
+            animation-name: h1-slide-in;
     -webkit-animation-duration: 1s;
-    animation-duration: 1s;
+            animation-duration: 1s;
     -webkit-animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
-    animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+            animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
   }
-
   @-webkit-keyframes h1-slide-in {
     from {
       opacity: 0;
       margin-left: 50%;
     }
-
     to {
       opacity: 1;
       margin-left: 0%;
     }
   }
-
   @keyframes h1-slide-in {
     from {
       opacity: 0;
       margin-left: 50%;
     }
-
     to {
       opacity: 1;
       margin-left: 0%;
     }
   }
-
   #headline p + p {
     font-size: 16px;
     line-height: 24px;
   }
-
   /*
     ========================================
     Works
@@ -764,51 +759,45 @@ footer form textarea {
     grid-row-gap: 142px;
     padding: 142px;
   }
-
   #works .work-card {
     padding: 24px;
     -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+            box-sizing: border-box;
   }
-
-  #works .work-card img {
+  #works .work-card .work-image {
     width: 50%;
   }
-
   #works .work-card .work-info {
     width: 45%;
   }
-
   #works .work-card .work-info .title {
     font-size: 40px;
     line-height: 52px;
     margin-bottom: 20px;
   }
-
   #works .work-card .work-info .subtitle {
     margin-bottom: 32px;
   }
-
   #works .work-card .work-info .subtitle div {
     font-weight: 600;
     font-size: 18px;
     line-height: 24px;
   }
-
   #works .work-card .work-info .subtitle div + div {
     font-weight: 500;
   }
-
-  #works .work-card .work-info .description {
+  #works .work-card .work-info .work-details .work-description {
     font-size: 16px;
     line-height: 24px;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
-
-  #works .work-card .work-info .tag-info {
+  #works .work-card .work-info .work-details .work-tags-buttons .tag-info {
+    margin-top: 0px;
     margin-bottom: 40px;
   }
-
+  #works .work-card .work-info .work-details .work-tags-buttons .tag-info span {
+    margin-bottom: 0px;
+  }
   /*
     ========================================
     About Myself
@@ -818,36 +807,30 @@ footer form textarea {
     padding: 50px 10%;
     min-height: calc(100vh - var(--nav-height));
     -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+            box-sizing: border-box;
   }
-
   #about .about-description {
     width: 40%;
     padding: 0;
   }
-
   #about #skills {
     width: 55%;
     padding: 0;
     margin-top: 0;
   }
-
   #about #skills .skill-card .skill-list .skill-item {
     width: 100px;
     padding: 12px;
     margin-bottom: 0;
   }
-
   #about #skills .skill-card .skill-list .skill-item + .skill-item {
     margin-left: 12px;
     margin-top: 0;
   }
-
   #about #skills .skill-card .skill-list .skill-item img {
     margin-right: 0;
     margin-bottom: 16px;
   }
-
   /*
     ========================================
     Contact Me
@@ -859,7 +842,8 @@ footer form textarea {
     background-position: 100% -10%;
     min-height: calc(100vh - var(--nav-height));
     -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+            box-sizing: border-box;
     padding: 50px 28%;
   }
 }
+/*# sourceMappingURL=style.css.map */

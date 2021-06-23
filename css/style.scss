@@ -389,6 +389,7 @@ header {
   grid-template-rows: auto auto auto;
   grid-template-columns: 100%;
   grid-template-areas:
+    "header"
     "work1"
     "work2"
     "work3"
@@ -396,29 +397,33 @@ header {
   grid-row-gap: 88px;
   padding: 114px 24px;
 
-  >:nth-child(1) {
-    grid-area: work1;
-  }
-
-  >:nth-child(2) {
-    grid-area: work2;
-  }
-
-  >:nth-child(3) {
-    grid-area: work3;
-  }
-
-  >:nth-child(4) {
-    grid-area: work4;
+  h2 {
+    grid-area: header;
   }
 
   .work-card {
-    padding: 16px 16px 24px 16px;
+    padding: 16px 16px 28px 16px;
     border: 1px solid #dfe1e6;
     border-radius: 16px;
     background-color: white;
 
-    img {
+    &:nth-child(2) {
+      grid-area: work1;
+    }
+
+    &:nth-child(3) {
+      grid-area: work2;
+    }
+
+    &:nth-child(4) {
+      grid-area: work3;
+    }
+
+    &:nth-child(5) {
+      grid-area: work4;
+    }
+
+    .work-image {
       width: 100%;
     }
 
@@ -426,7 +431,7 @@ header {
       margin-top: 12px;
 
       >:nth-child(-n+2) {
-        margin-bottom: 12px;
+        margin-bottom: 20px;
       }
 
       .title {
@@ -441,25 +446,33 @@ header {
           font-size: 13px;
           line-height: 16px;
           margin-right: 12px;
+          margin-left: 12px;
         }
       }
 
-      .description {
-        font-size: 15px;
-      }
-
-      .tag-info {
-        margin-top: 12px;
-        margin-bottom: 16px;
-
-        span {
-          margin-right: 8px;
-          margin-bottom: 8px;
-          font-size: 12px;
-          line-height: 16px;
-          padding: 4px 12px;
-          border-radius: 8px;
-          background-color: #ebebff;
+      .work-details {
+        .work-description {
+          font-size: 15px;
+          width: 100%;
+        }
+  
+        .work-tags-buttons {
+          width: 100%;
+  
+          .tag-info {
+            margin-top: 12px;
+            margin-bottom: 24px;
+    
+            span {
+              margin-right: 8px;
+              margin-bottom: 8px;
+              font-size: 12px;
+              line-height: 16px;
+              padding: 4px 12px;
+              border-radius: 8px;
+              background-color: #ebebff;
+            }
+          }
         }
       }
     }
@@ -735,7 +748,7 @@ footer {
       padding: 24px;
       box-sizing: border-box;
 
-      img {
+      .work-image {
         width: 50%;
       }
 
@@ -762,14 +775,23 @@ footer {
           }
         }
 
-        .description {
-          font-size: 16px;
-          line-height: 24px;
-          margin-bottom: 28px;
-        }
+        .work-details {
+          .work-description {
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 24px;
+          }
 
-        .tag-info {
-          margin-bottom: 40px;
+          .work-tags-buttons {
+            .tag-info {
+              margin-top: 0px;
+              margin-bottom: 40px;
+
+              span {
+                margin-bottom: 0px;
+              }
+            }
+          }
         }
       }
     }
