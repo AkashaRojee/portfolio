@@ -34,7 +34,8 @@ works = [
 //Create array of ClassElement objects
 workCardElements = [
   new ClassElement(['work-card', 'flex-row', 'justify-between', 'wrap'], 'div'),
-  new ClassElement(['work-image', 'flex-col'], 'img'),
+  new ClassElement(['work-image', 'flex-col', 'justify-center'], 'div'),
+  new ClassElement(['image'], 'img'),
   new ClassElement(['work-info', 'flex-col'], 'div'),
   new ClassElement(['title', 'flex-row', 'blue-main'], 'span'),
   new ClassElement(['subtitle', 'flex-row', 'align-center'], 'div'),
@@ -74,13 +75,14 @@ works.forEach(work => {
   let cardElements = createElements(workCardElements);
 
   //set Work values for: image, title, client, role, year, description
-  cardElements[1].src = '/images/works/' + work.image + '.png';
-  cardElements[1].alt = 'Screenshot of ' + work.title;
-  cardElements[3].textContent = work.title;
-  cardElements[5].textContent = work.client;
-  cardElements[8].textContent = work.role;
-  cardElements[11].textContent = work.year;
-  cardElements[13].textContent = work.description;
+  cardElements[2].src = '/images/works/' + work.image + '.png';
+  cardElements[2].alt = 'Screenshot of ' + work.title;
+  cardElements[1].appendChild(cardElements[2]);
+  cardElements[4].textContent = work.title;
+  cardElements[6].textContent = work.client;
+  cardElements[9].textContent = work.role;
+  cardElements[12].textContent = work.year;
+  cardElements[14].textContent = work.description;
 
   /*
   ----------------------------------------
@@ -92,15 +94,15 @@ works.forEach(work => {
   work.technology.forEach(tech => {
     let span = createElements([new ClassElement(['work-technology'], 'span')]);
     span[0].textContent = tech;
-    cardElements[15].appendChild(span[0]);
+    cardElements[16].appendChild(span[0]);
   });
 
   //Set See Project button text and append button to work-buttons
-  cardElements[17].textContent = 'See Project';
-  cardElements[16].appendChild(cardElements[17]);
+  cardElements[18].textContent = 'See Project';
+  cardElements[17].appendChild(cardElements[18]);
 
   //Append tag-info and work-buttons to work-tags-button
-  cardElements[14].append(cardElements[15], cardElements[16]);
+  cardElements[15].append(cardElements[16], cardElements[17]);
 
   /*
   ----------------------------------------
@@ -109,7 +111,7 @@ works.forEach(work => {
   */  
 
   //Append work-description and work-tags-buttons to work-details
-  cardElements[12].append(cardElements[13], cardElements[14]);
+  cardElements[13].append(cardElements[14], cardElements[15]);
 
   /*
   ----------------------------------------
@@ -118,17 +120,17 @@ works.forEach(work => {
   */  
 
   //Set separator-image image
-  cardElements[7].src = 'images/works/circle.png';
-  cardElements[7].alt = 'Separator';
-  cardElements[10].src = 'images/works/circle.png';
-  cardElements[10].alt = 'Separator';
+  cardElements[8].src = 'images/works/circle.png';
+  cardElements[8].alt = 'Separator';
+  cardElements[11].src = 'images/works/circle.png';
+  cardElements[11].alt = 'Separator';
 
   //Append separator-image to separator
-  cardElements[6].appendChild(cardElements[7]);
-  cardElements[9].appendChild(cardElements[10]);
+  cardElements[7].appendChild(cardElements[8]);
+  cardElements[10].appendChild(cardElements[11]);
 
   //Append client, role, year and separators to subtitle
-  cardElements[4].append(cardElements[5], cardElements[6], cardElements[8], cardElements[9], cardElements[11]);
+  cardElements[5].append(cardElements[6], cardElements[7], cardElements[9], cardElements[10], cardElements[12]);
 
   /*
   ----------------------------------------
@@ -137,7 +139,7 @@ works.forEach(work => {
   */ 
 
   //Append title and subtitle to work-info
-  cardElements[2].append(cardElements[3], cardElements[4], cardElements[12]);
+  cardElements[3].append(cardElements[4], cardElements[5], cardElements[13]);
 
   /*
   ----------------------------------------
@@ -145,8 +147,8 @@ works.forEach(work => {
   ----------------------------------------
   */ 
 
-  //Append work-image and work-info to work-card
-  cardElements[0].append(cardElements[1], cardElements[2]);
+  //Append work-image div and work-info to work-card
+  cardElements[0].append(cardElements[1], cardElements[3]);
 
   /*
   ----------------------------------------
@@ -158,7 +160,8 @@ works.forEach(work => {
 
 });
 
-//Take an array of ClassElement objects and create them accordingly
+//Take an array of ClassElement objects, create them accordingly,
+//and return an array of created elements with their classes applied
 function createElements(elements) {
   let elementsArray = [];
   elements.forEach(element => {
