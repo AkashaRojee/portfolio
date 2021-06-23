@@ -1,7 +1,8 @@
 let works = [];
-let elementsToCreate = [];
+let workCardElements = [];
+const workSection = document.querySelector('#works');
 
-//Work constructor
+//Constructor for each work
 function Work(...workData) {
   this.image = workData[0];
   this.title = workData[1];
@@ -10,6 +11,13 @@ function Work(...workData) {
   this.year = workData[4];
   this.description = workData[5];
   this.technology = workData[6];
+}
+
+//Constructor for each HTML element in work-card:
+//class names to apply to it, and its element type
+function ClassElement(classNames, elementType) {
+  this.classNames = classNames;
+  this.elementType = elementType;
 }
 
 //Create array of Work objects
@@ -23,12 +31,8 @@ works = [
   new Work('uber-navigation', 'Uber Navigation', 'UBER', 'Lead Developer', '2015', 'A smart assistant to make driving more safe, efficient, and fun by unlocking your most expensive computer: your car.', ['html', 'ruby on rails', 'css', 'javascript'])
 ];
 
-function ClassElement(classNames, elementType) {
-  this.classNames = classNames;
-  this.elementType = elementType;
-}
-
-elementsToCreate = [
+//Create array of ClassElement objects
+workCardElements = [
   new ClassElement(['work-card', 'flex-row', 'justify-between', 'wrap'], 'div'),
   new ClassElement(['work-image', 'flex-col'], 'img'),
   new ClassElement(['work-info', 'flex-col'], 'div'),
@@ -49,15 +53,13 @@ elementsToCreate = [
   new ClassElement(['btn', 'font-medium'], 'button')
 ];
 
-
 /*
 ========================================
-Create HTML for works general container
+Create HTML for works container
 ========================================
 */ 
 
-let workSection = document.querySelector('#works');
-let workHeading = createElements([new ClassElement(['hidden'], 'h2')])[0];
+const workHeading = createElements([new ClassElement(['hidden'], 'h2')])[0];
 workHeading.textContent = 'Works';
 workSection.appendChild(workHeading);
 
@@ -69,12 +71,11 @@ Create HTML for each work-card container
 
 works.forEach(work => {
 
-  let cardElements = createElements(elementsToCreate);
+  let cardElements = createElements(workCardElements);
 
   //set Work values for: image, title, client, role, year, description
   cardElements[1].src = '/images/works/' + work.image + '.png';
   cardElements[1].alt = 'Screenshot of ' + work.title;
-
   cardElements[3].textContent = work.title;
   cardElements[5].textContent = work.client;
   cardElements[8].textContent = work.role;
@@ -157,15 +158,16 @@ works.forEach(work => {
 
 });
 
+//Take an array of ClassElement objects and create them accordingly
 function createElements(elements) {
-  let wcElements = [];
+  let elementsArray = [];
   elements.forEach(element => {
-    let wcElement = document.createElement(element.elementType);
+    let elementItem = document.createElement(element.elementType);
     element.classNames.forEach(className => {
-      wcElement.classList.add(className);
+      elementItem.classList.add(className);
     });
-    wcElements.push(wcElement);
+    elementsArray.push(elementItem);
   });
-  return wcElements;
+  return elementsArray;
 }
 

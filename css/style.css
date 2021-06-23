@@ -444,6 +444,7 @@ header nav .mobile-menu a {
 
 #works .work-card .work-image {
   width: 100%;
+  height: auto;
 }
 
 #works .work-card .work-info {
@@ -794,9 +795,6 @@ footer form textarea {
   #works .work-card .work-info .work-details .work-tags-buttons .tag-info {
     margin-top: 0px;
     margin-bottom: 40px;
-  }
-  #works .work-card .work-info .work-details .work-tags-buttons .tag-info span {
-    margin-bottom: 0px;
   }
   /*
     ========================================

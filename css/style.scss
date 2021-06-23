@@ -425,6 +425,7 @@ header {
 
     .work-image {
       width: 100%;
+      height: auto;
     }
 
     .work-info {
@@ -786,10 +787,6 @@ footer {
             .tag-info {
               margin-top: 0px;
               margin-bottom: 40px;
-
-              span {
-                margin-bottom: 0px;
-              }
             }
           }
         }
