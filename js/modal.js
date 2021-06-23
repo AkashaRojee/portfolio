@@ -39,10 +39,10 @@ function createElement(elementType, classNames, attributes = {}, textContent = '
 function createCard(index) {
   return {
     'work-card' : createElement('div',
-                                'work-card flex-row justify-between wrap' +
+                                'work-card flex-col justify-between wrap' +
                                   (index % 2 === 0 ? '' : ' desktop-row-reverse')),
     'work-image' : createElement('div', 'work-image flex-col justify-center'),
-    'image' : createElement('img', 'image',
+    'image' : createElement('img', 'image flex-row',
                             {'src' : '/images/works/' + works[index].image + '.png',
                               'alt' : 'Screenshot of ' + works[index].title}),
     'work-info' : createElement('div', 'work-info flex-col'),
@@ -56,7 +56,7 @@ function createCard(index) {
     'role' : createElement('span', 'role grey-main', {}, works[index].role),
     'year' : createElement('span', 'year grey-main', {}, works[index].year),
     'work-details' : createElement('div', 'work-details flex-row wrap'),
-    'work-description' : createElement('p', 'work-description flex-col blue-light', {}, works[index].description),
+    'work-description' : createElement('p', 'work-description flex-row blue-light', {}, works[index].description),
     'work-tags-buttons' : createElement('div', 'work-tags-buttons flex-col'),
     'tag-info' : createElement('div', 'tag-info flex-row font-medium purple-main wrap'),
     'work-technology': createElement('span', 'work-technology'),
@@ -68,17 +68,21 @@ function createCard(index) {
 //Append card elements to required parents
 function structureCard(card, index) {
   workSection.appendChild(card['work-card']);
-  card['work-card'].append(card['work-image'], card['work-info']);
-  card['work-image'].appendChild(card['image']);
-  card['work-info'].append(card['title'], card['subtitle'], card['work-details']);
+  //card['work-card'].append(card['work-image'], card['work-info']);
+  card['work-card'].append(card['image'], card['title'], card['subtitle'],
+                          card['work-description'], card['tag-info'], card['work-buttons']);
+
+  // card['work-image'].appendChild(card['image']);
+
+  // card['work-info'].append(card['title'], card['subtitle'], card['work-details']);
   
   card['separator'].appendChild(card['separator-image']);
   card['subtitle'].append(card['client'], card['separator'],
                           card['role'], card['separator'].cloneNode(true),
                           card['year']);
 
-  card['work-details'].append(card['work-description'], card['work-tags-buttons']);
-  card['work-tags-buttons'].append(card['tag-info'], card['work-buttons']);
+  // card['work-details'].append(card['work-description'], card['work-tags-buttons']);
+  // card['work-tags-buttons'].append(card['tag-info'], card['work-buttons']);
 
   let spans = [];
   works[index].technologies.forEach(tech => {
@@ -89,13 +93,39 @@ function structureCard(card, index) {
   card['tag-info'].append(...spans);
 
   card['work-buttons'].appendChild(card['btn'])
+
+  console.log(card['work-card']);
   return card;
 }
 
+//Remove modal work card from body,
+//and reset brightness in the background
+function closeModal() {
+  body.querySelector('.modal').remove();
+  body.querySelectorAll(':not(.modal, .modal *)').forEach(element => {
+    element.style.filter = 'brightness(100%)';
+  })
+}
+
 function showModal(index) {
+
+  //Create modal work card
   let modalCard = createCard(index);
   modalCard = structureCard(modalCard, index);
   modalCard['work-card'].classList.add('modal');
+
+  //Dynamically add modal close icon to modal work card,
+  //and add event listener to close modal window
+  let modalClose = createElement('img', 'modal-close',
+                                  {'src' : '/images/icons/mobile-modal-close.svg',
+                                  'alt' : 'Close mobile modal window'});
+  modalCard['work-card'].appendChild(modalClose);
+  modalClose.addEventListener('click', function () {
+    closeModal();
+  });
+
+  //Add modal work card to body,
+  //and reduce brightness in the background
   body.append(modalCard['work-card']);
   body.querySelectorAll(':not(.modal, .modal *)').forEach(element => {
     element.style.filter = 'brightness(50%)';

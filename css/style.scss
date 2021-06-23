@@ -393,6 +393,26 @@ header {
   width: 90vw;
   margin-top: 30px;
   box-sizing: border-box;
+
+  .title {
+    order: -2;
+    padding-right: 45px;
+  }
+
+  .subtitle {
+    order: -1;
+  }
+
+  .tag-info {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ebecf0;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
 }
 
 .work-card {
@@ -417,25 +437,29 @@ header {
     grid-area: work4;
   }
 
-  .work-image {
+  .image {
     width: 100%;
     height: auto;
+    margin-bottom: 12px;
   }
 
-  .work-info {
-    margin-top: 12px;
+  // .work-info {
+  //   margin-top: 12px;
 
-    >:nth-child(-n+2) {
-      margin-bottom: 20px;
-    }
+  //   >:nth-child(-n+2) {
+  //     margin-bottom: 20px;
+  //   }
 
     .title {
       font-weight: 700;
       font-size: 32px;
       line-height: 44px;
+      margin-bottom: 20px;
     }
 
     .subtitle {
+      margin-bottom: 20px;
+
       div {
         font-weight: 600;
         font-size: 13px;
@@ -445,14 +469,15 @@ header {
       }
     }
 
-    .work-details {
+    // .work-details {
       .work-description {
         font-size: 15px;
         width: 100%;
+        margin-bottom: 12px;
       }
 
-      .work-tags-buttons {
-        width: 100%;
+      // .work-tags-buttons {
+      //   width: 100%;
 
         .tag-info {
           margin-top: 12px;
@@ -468,9 +493,9 @@ header {
             background-color: #ebebff;
           }
         }
-      }
-    }
-  }
+      // }
+    // }
+  // }
 }
 
 #works {

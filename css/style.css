@@ -407,6 +407,30 @@ header nav .mobile-menu a {
           box-sizing: border-box;
 }
 
+.modal .title {
+  -webkit-box-ordinal-group: -1;
+      -ms-flex-order: -2;
+          order: -2;
+  padding-right: 45px;
+}
+
+.modal .subtitle {
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+}
+
+.modal .tag-info {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ebecf0;
+}
+
+.modal .modal-close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
 .work-card {
   padding: 16px 16px 28px 16px;
   border: 1px solid #dfe1e6;
@@ -438,26 +462,24 @@ header nav .mobile-menu a {
   grid-area: work4;
 }
 
-.work-card .work-image {
+.work-card .image {
   width: 100%;
   height: auto;
+  margin-bottom: 12px;
 }
 
-.work-card .work-info {
-  margin-top: 12px;
-}
-
-.work-card .work-info > :nth-child(-n+2) {
-  margin-bottom: 20px;
-}
-
-.work-card .work-info .title {
+.work-card .title {
   font-weight: 700;
   font-size: 32px;
   line-height: 44px;
+  margin-bottom: 20px;
 }
 
-.work-card .work-info .subtitle div {
+.work-card .subtitle {
+  margin-bottom: 20px;
+}
+
+.work-card .subtitle div {
   font-weight: 600;
   font-size: 13px;
   line-height: 16px;
@@ -465,21 +487,18 @@ header nav .mobile-menu a {
   margin-left: 12px;
 }
 
-.work-card .work-info .work-details .work-description {
+.work-card .work-description {
   font-size: 15px;
   width: 100%;
+  margin-bottom: 12px;
 }
 
-.work-card .work-info .work-details .work-tags-buttons {
-  width: 100%;
-}
-
-.work-card .work-info .work-details .work-tags-buttons .tag-info {
+.work-card .tag-info {
   margin-top: 12px;
   margin-bottom: 24px;
 }
 
-.work-card .work-info .work-details .work-tags-buttons .tag-info span {
+.work-card .tag-info span {
   margin-right: 8px;
   margin-bottom: 8px;
   font-size: 12px;
