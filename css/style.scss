@@ -167,6 +167,10 @@ table {
   justify-content: space-between;
 }
 
+.justify-around {
+  justify-content: space-around;
+}
+
 .align-center {
   align-items: center;
 }
@@ -287,6 +291,7 @@ header {
   top: 0;
   padding: 12px 35px 12px 24px;
   background-color: white;
+  z-index: 100;
 
   nav {
     button {
@@ -393,6 +398,7 @@ header {
   width: 90vw;
   margin-top: 30px;
   box-sizing: border-box;
+  z-index: 200;
 
   .title {
     order: -2;
@@ -406,6 +412,30 @@ header {
   .tag-info {
     padding-bottom: 16px;
     border-bottom: 1px solid #ebecf0;
+  }
+
+  .work-buttons {
+
+    .button-modal {
+      width: 45%;
+      white-space: nowrap;
+      padding: 10px 50px 10px 10px;
+      background-repeat: no-repeat;
+      background-position: 90% 50%;
+      
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+    
+    .button-live {
+      background-image: url('../images/icons/see-live.svg');
+    }
+
+    .button-source {
+      background-image: url('../images/icons/see-source.svg');
+    }
   }
 
   .modal-close {
@@ -443,31 +473,24 @@ header {
     margin-bottom: 12px;
   }
 
-  // .work-info {
-  //   margin-top: 12px;
+  .title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 44px;
+    margin-bottom: 20px;
+  }
 
-  //   >:nth-child(-n+2) {
-  //     margin-bottom: 20px;
-  //   }
+  .subtitle {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
 
-    .title {
-      font-weight: 700;
-      font-size: 32px;
-      line-height: 44px;
-      margin-bottom: 20px;
+    div {
+      margin-right: 12px;
+      margin-left: 12px;
     }
-
-    .subtitle {
-      margin-bottom: 20px;
-
-      div {
-        font-weight: 600;
-        font-size: 13px;
-        line-height: 16px;
-        margin-right: 12px;
-        margin-left: 12px;
-      }
-    }
+  }
 
     // .work-details {
       .work-description {

@@ -179,6 +179,11 @@ table {
           justify-content: space-between;
 }
 
+.justify-around {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
 .align-center {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -300,6 +305,7 @@ header {
   top: 0;
   padding: 12px 35px 12px 24px;
   background-color: white;
+  z-index: 100;
 }
 
 header nav button {
@@ -405,6 +411,7 @@ header nav .mobile-menu a {
   margin-top: 30px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  z-index: 200;
 }
 
 .modal .title {
@@ -423,6 +430,27 @@ header nav .mobile-menu a {
 .modal .tag-info {
   padding-bottom: 16px;
   border-bottom: 1px solid #ebecf0;
+}
+
+.modal .work-buttons .button-modal {
+  width: 45%;
+  white-space: nowrap;
+  padding: 10px 50px 10px 10px;
+  background-repeat: no-repeat;
+  background-position: 90% 50%;
+}
+
+.modal .work-buttons .button-modal a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.modal .work-buttons .button-live {
+  background-image: url("../images/icons/see-live.svg");
+}
+
+.modal .work-buttons .button-source {
+  background-image: url("../images/icons/see-source.svg");
 }
 
 .modal .modal-close {
@@ -477,12 +505,12 @@ header nav .mobile-menu a {
 
 .work-card .subtitle {
   margin-bottom: 20px;
-}
-
-.work-card .subtitle div {
   font-weight: 600;
   font-size: 13px;
   line-height: 16px;
+}
+
+.work-card .subtitle div {
   margin-right: 12px;
   margin-left: 12px;
 }

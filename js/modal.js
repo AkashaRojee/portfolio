@@ -11,17 +11,35 @@ function Work(...workData) {
   this.year = workData[4];
   this.description = workData[5];
   this.technologies = workData[6];
+  this.liveLink = workData[7];
+  this.sourceLink = workData[8];
 }
 
 //Create array of Work objects
 works = [
-  new Work('tonic', 'Tonic', 'CANOPY', 'Back-End Dev', '2015', 'A daily selection of privately personalized reads; no accounts or sign-ups required.', ['html', 'css', 'javascript']),
+  new Work('tonic', 'Tonic', 'CANOPY', 'Back-End Dev', '2015',
+            'A daily selection of privately personalized reads; no accounts or sign-ups required.',
+            ['html', 'css', 'javascript'],
+            'https://AkashaRojee.github.io/tonic',
+            'https://github.com/AkashaRojee/tonic'),
 
-  new Work('multi-post-stories', 'Multi-Post Stories', 'FACEBOOK', 'Full Stack Dev', '2015', 'Experimental content creation feature that allows users to add to an existing story over the course of a day without spamming their friends.', ['html', 'ruby on rails', 'css', 'javascript']),
+  new Work('multi-post-stories', 'Multi-Post Stories','FACEBOOK', 'Full Stack Dev', '2015',
+            'Experimental content creation feature that allows users to add to an existing story over the course of a day without spamming their friends.',
+            ['html', 'ruby on rails', 'css', 'javascript'],
+            'https://AkashaRojee.github.io/multi-post-stories',
+            'https://github.com/AkashaRojee/multi-post-stories'),
 
-  new Work('facebook-360', 'Facebook 360', 'FACEBOOK', 'Full Stack Dev', '2015', '  Exploring the future of media in Facebook\'s first Virtual Reality app; a place to discover and enjoy 360 photos and videos on Gear VR.', ['html', 'ruby on rails', 'css', 'javascript']),
+  new Work('facebook-360', 'Facebook 360', 'FACEBOOK', 'Full Stack Dev', '2015',
+            'Exploring the future of media in Facebook\'s first Virtual Reality app; a place to discover and enjoy 360 photos and videos on Gear VR.',
+            ['html', 'ruby on rails', 'css', 'javascript'],
+            'https://AkashaRojee.github.io/facebook-360',
+            'https://github.com/AkashaRojee/facebook-360'),
 
-  new Work('uber-navigation', 'Uber Navigation', 'UBER', 'Lead Developer', '2015', 'A smart assistant to make driving more safe, efficient, and fun by unlocking your most expensive computer: your car.', ['html', 'ruby on rails', 'css', 'javascript'])
+  new Work('uber-navigation', 'Uber Navigation', 'UBER', 'Lead Developer', '2015',
+            'A smart assistant to make driving more safe, efficient, and fun by unlocking your most expensive computer: your car.',
+            ['html', 'ruby on rails', 'css', 'javascript'],
+            'https://AkashaRojee.github.io/uber-navigation',
+            'https://github.com/AkashaRojee/uber-navigation')
 ];
 
 //Create HTML element of given type and add classes, attributes and textContent (where applicable)
@@ -31,7 +49,7 @@ function createElement(elementType, classNames, attributes = {}, textContent = '
   Object.keys(attributes).forEach(attribute => {
     elementObject.setAttribute(attribute, attributes[attribute]);
   });
-  elementObject.textContent = textContent;
+  elementObject.innerHTML = textContent;
   return elementObject;
 }
 
@@ -60,8 +78,12 @@ function createCard(index) {
     'work-tags-buttons' : createElement('div', 'work-tags-buttons flex-col'),
     'tag-info' : createElement('div', 'tag-info flex-row font-medium purple-main wrap'),
     'work-technology': createElement('span', 'work-technology'),
-    'work-buttons' : createElement('div', 'work-buttons'),
-    'btn' : createElement('button', 'btn font-medium', {}, 'See Project')
+    'work-buttons' : createElement('div', 'work-buttons flex-row'),
+    'btn' : createElement('button', 'btn font-medium', {}, 'See Project'),
+    'button-live' : createElement('button', 'button-live button-modal btn font-medium',
+                                  {}, '<a href="' + works[index].liveLink + '">See Live</a>'),
+    'button-source' : createElement('button', 'button-source button-modal btn font-medium',
+                                    {}, '<a href="' + works[index].sourceLink + '">See Source</a>')
   };
 }
 
@@ -123,6 +145,10 @@ function showModal(index) {
   modalClose.addEventListener('click', function () {
     closeModal();
   });
+
+  modalCard['work-buttons'].removeChild(modalCard['btn']);
+  modalCard['work-buttons'].append(modalCard['button-live'], modalCard['button-source']);
+  modalCard['work-buttons'].classList.add('justify-around');
 
   //Add modal work card to body,
   //and reduce brightness in the background
