@@ -1,5 +1,4 @@
 let works = [];
-let workCardElements = [];
 const workSection = document.querySelector('#works');
 
 //Constructor for each work
@@ -10,14 +9,18 @@ function Work(...workData) {
   this.role = workData[3];
   this.year = workData[4];
   this.description = workData[5];
-  this.technology = workData[6];
+  this.technologies = workData[6];
 }
 
-//Constructor for each HTML element in work-card:
-//class names to apply to it, and its element type
-function ClassElement(classNames, elementType) {
-  this.classNames = classNames;
-  this.elementType = elementType;
+//Create HTML element of given type and add classes, attributes and textContent (where applicable)
+function createElement(elementType, classNames, attributes = {}, textContent = '') {
+  let elementObject = document.createElement(elementType);
+  elementObject.classList.add(...(classNames.split(' ')));
+  Object.keys(attributes).forEach(attribute => {
+    elementObject.setAttribute(attribute, attributes[attribute]);
+  });
+  elementObject.textContent = textContent;
+  return elementObject;
 }
 
 //Create array of Work objects
@@ -31,146 +34,62 @@ works = [
   new Work('uber-navigation', 'Uber Navigation', 'UBER', 'Lead Developer', '2015', 'A smart assistant to make driving more safe, efficient, and fun by unlocking your most expensive computer: your car.', ['html', 'ruby on rails', 'css', 'javascript'])
 ];
 
-//Create array of ClassElement objects
-workCardElements = [
-  new ClassElement(['work-card', 'flex-row', 'justify-between', 'wrap'], 'div'),
-  new ClassElement(['work-image', 'flex-col', 'justify-center'], 'div'),
-  new ClassElement(['image'], 'img'),
-  new ClassElement(['work-info', 'flex-col'], 'div'),
-  new ClassElement(['title', 'flex-row', 'blue-main'], 'span'),
-  new ClassElement(['subtitle', 'flex-row', 'align-center'], 'div'),
-  new ClassElement(['client', 'blue-light'], 'span'),
-  new ClassElement(['separator'], 'div'),
-  new ClassElement(['separator-image'], 'img'),
-  new ClassElement(['role', 'grey-main'], 'span'),
-  new ClassElement(['separator'], 'div'),
-  new ClassElement(['separator-image'], 'img'),
-  new ClassElement(['year', 'grey-main'], 'span'),
-  new ClassElement(['work-details', 'flex-row', 'wrap'], 'div'),
-  new ClassElement(['work-description', 'flex-col', 'blue-light'], 'p'),
-  new ClassElement(['work-tags-buttons', 'flex-col'], 'div'),
-  new ClassElement(['tag-info', 'flex-row', 'font-medium', 'purple-main', 'wrap'], 'div'),
-  new ClassElement(['work-buttons'], 'div'),
-  new ClassElement(['btn', 'font-medium'], 'button')
-];
-
-/*
-========================================
-Create HTML for works container
-========================================
-*/ 
-
-const workHeading = createElements([new ClassElement(['hidden'], 'h2')])[0];
-workHeading.textContent = 'Works';
+//Create HTML for works container
+const workHeading = createElement('h2', 'hidden', {}, 'Works');
 workSection.appendChild(workHeading);
 
-/*
-========================================
-Create HTML for each work-card container
-========================================
-*/ 
-
+//Create HTML for each work-card container
 works.forEach(work => {
 
-  let cardElements = createElements(workCardElements);
+  //Create card elements individually 
+  let card = {
+    'work-card' : createElement('div', 'work-card flex-row justify-between wrap'),
+    'work-image' : createElement('div', 'work-image flex-col justify-center'),
+    'image' : createElement('img', 'image',
+                            {'src' : '/images/works/' + work.image + '.png',
+                              'alt' : 'Screenshot of ' + work.title}),
+    'work-info' : createElement('div', 'work-info flex-col'),
+    'title' : createElement('span', 'title flex-row blue-main span', {}, work.title),
+    'subtitle' : createElement('div', 'subtitle flex-row align-center'),
+    'client' : createElement('span', 'client blue-light', {}, work.client),
+    'separator' : createElement('div', 'separator'),
+    'separator-image' : createElement('img', 'separator-image',
+                                     {'src' : 'images/works/circle.png',
+                                      'alt' : 'Separator'}),
+    'role' : createElement('span', 'role grey-main', {}, work.role),
+    'year' : createElement('span', 'year grey-main', {}, work.year),
+    'work-details' : createElement('div', 'work-details flex-row wrap'),
+    'work-description' : createElement('p', 'work-description flex-col blue-light', {}, work.description),
+    'work-tags-buttons' : createElement('div', 'work-tags-buttons flex-col'),
+    'tag-info' : createElement('div', 'tag-info flex-row font-medium purple-main wrap'),
+    'work-technology': createElement('span', 'work-technology'),
+    'work-buttons' : createElement('div', 'work-buttons'),
+    'btn' : createElement('button', 'btn font-medium', {}, 'See Project')
+  };
 
-  //set Work values for: image, title, client, role, year, description
-  cardElements[2].src = '/images/works/' + work.image + '.png';
-  cardElements[2].alt = 'Screenshot of ' + work.title;
-  cardElements[1].appendChild(cardElements[2]);
-  cardElements[4].textContent = work.title;
-  cardElements[6].textContent = work.client;
-  cardElements[9].textContent = work.role;
-  cardElements[12].textContent = work.year;
-  cardElements[14].textContent = work.description;
+  //Append card elements to required parents
 
-  /*
-  ----------------------------------------
-  Set HTML for work-tags-buttons container
-  ----------------------------------------
-  */  
+  workSection.appendChild(card['work-card']);
+  card['work-card'].append(card['work-image'], card['work-info']);
+  card['work-image'].appendChild(card['image']);
+  card['work-info'].append(card['title'], card['subtitle'], card['work-details']);
+  
+  card['separator'].appendChild(card['separator-image']);
+  card['subtitle'].append(card['client'], card['separator'],
+                          card['role'], card['separator'].cloneNode(true),
+                          card['year']);
 
-  //Set tag-info span values and append spans to tag-info
-  work.technology.forEach(tech => {
-    let span = createElements([new ClassElement(['work-technology'], 'span')]);
-    span[0].textContent = tech;
-    cardElements[16].appendChild(span[0]);
+  card['work-details'].append(card['work-description'], card['work-tags-buttons']);
+  card['work-tags-buttons'].append(card['tag-info'], card['work-buttons']);
+
+  let spans = [];
+  work.technologies.forEach((tech, index) => {
+    let span = card['work-technology'].cloneNode(true);
+    span.textContent = tech;
+    spans.push(span);
   });
+  card['tag-info'].append(...spans);
 
-  //Set See Project button text and append button to work-buttons
-  cardElements[18].textContent = 'See Project';
-  cardElements[17].appendChild(cardElements[18]);
-
-  //Append tag-info and work-buttons to work-tags-button
-  cardElements[15].append(cardElements[16], cardElements[17]);
-
-  /*
-  ----------------------------------------
-  Set HTML for work-details container
-  ----------------------------------------
-  */  
-
-  //Append work-description and work-tags-buttons to work-details
-  cardElements[13].append(cardElements[14], cardElements[15]);
-
-  /*
-  ----------------------------------------
-  Set HTML for subtitle container
-  ----------------------------------------
-  */  
-
-  //Set separator-image image
-  cardElements[8].src = 'images/works/circle.png';
-  cardElements[8].alt = 'Separator';
-  cardElements[11].src = 'images/works/circle.png';
-  cardElements[11].alt = 'Separator';
-
-  //Append separator-image to separator
-  cardElements[7].appendChild(cardElements[8]);
-  cardElements[10].appendChild(cardElements[11]);
-
-  //Append client, role, year and separators to subtitle
-  cardElements[5].append(cardElements[6], cardElements[7], cardElements[9], cardElements[10], cardElements[12]);
-
-  /*
-  ----------------------------------------
-  Set HTML for work-info container
-  ----------------------------------------
-  */ 
-
-  //Append title and subtitle to work-info
-  cardElements[3].append(cardElements[4], cardElements[5], cardElements[13]);
-
-  /*
-  ----------------------------------------
-  Set HTML for work-card container
-  ----------------------------------------
-  */ 
-
-  //Append work-image div and work-info to work-card
-  cardElements[0].append(cardElements[1], cardElements[3]);
-
-  /*
-  ----------------------------------------
-  Append work-card to works container
-  ----------------------------------------
-  */ 
-
-  workSection.append(cardElements[0]);
+  card['work-buttons'].appendChild(card['btn']);
 
 });
-
-//Take an array of ClassElement objects, create them accordingly,
-//and return an array of created elements with their classes applied
-function createElements(elements) {
-  let elementsArray = [];
-  elements.forEach(element => {
-    let elementItem = document.createElement(element.elementType);
-    element.classNames.forEach(className => {
-      elementItem.classList.add(className);
-    });
-    elementsArray.push(elementItem);
-  });
-  return elementsArray;
-}
-
