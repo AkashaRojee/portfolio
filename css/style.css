@@ -414,17 +414,11 @@ header nav .mobile-menu a {
   z-index: 200;
 }
 
-.modal .title {
-  -webkit-box-ordinal-group: -1;
-      -ms-flex-order: -2;
-          order: -2;
-  padding-right: 45px;
-}
-
-.modal .subtitle {
+.modal .title-subtitle {
   -webkit-box-ordinal-group: 0;
       -ms-flex-order: -1;
           order: -1;
+  padding-right: 45px;
 }
 
 .modal .tag-info {
@@ -457,6 +451,7 @@ header nav .mobile-menu a {
   position: absolute;
   top: 30px;
   right: 30px;
+  cursor: pointer;
 }
 
 .work-card {
@@ -464,6 +459,12 @@ header nav .mobile-menu a {
   border: 1px solid #dfe1e6;
   border-radius: 16px;
   background-color: white;
+}
+
+.work-card h2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header;
 }
 
 .work-card:nth-child(2) {
@@ -544,12 +545,6 @@ header nav .mobile-menu a {
       grid-template-areas: "header" "work1" "work2" "work3" "work4";
   grid-row-gap: 88px;
   padding: 114px 24px;
-}
-
-#works h2 {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: header;
 }
 
 .btn {
@@ -819,39 +814,64 @@ footer form textarea {
     grid-row-gap: 142px;
     padding: 10%;
   }
-  #works .work-card {
+  .modal {
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    margin-top: 2px;
+    width: 80vw;
+  }
+  .modal .image-container {
+    height: 50vh;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  .modal .image-container .image {
+    height: 100%;
+    width: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .modal .title {
+    margin-bottom: 0px;
+  }
+  .modal .work-description {
+    margin-right: 10px;
+  }
+  .modal .tags-buttons {
+    width: 50%;
+  }
+  .work-card {
     padding: 24px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
-  #works .work-card .work-image {
-    width: 50%;
-  }
-  #works .work-card .work-info {
+  .work-card .content {
     width: 45%;
   }
-  #works .work-card .work-info .title {
+  .work-card .content .title {
     font-size: 40px;
     line-height: 52px;
     margin-bottom: 20px;
   }
-  #works .work-card .work-info .subtitle {
+  .work-card .content .subtitle {
     margin-bottom: 32px;
   }
-  #works .work-card .work-info .subtitle div {
+  .work-card .content .subtitle div {
     font-weight: 600;
     font-size: 18px;
     line-height: 24px;
   }
-  #works .work-card .work-info .subtitle div + div {
+  .work-card .content .subtitle div + div {
     font-weight: 500;
   }
-  #works .work-card .work-info .work-details .work-description {
+  .work-card .content .work-details .work-description {
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 24px;
   }
-  #works .work-card .work-info .work-details .work-tags-buttons .tag-info {
+  .work-card .content .work-details .work-tags-buttons .tag-info {
     margin-top: 0px;
     margin-bottom: 40px;
   }

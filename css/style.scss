@@ -400,13 +400,9 @@ header {
   box-sizing: border-box;
   z-index: 200;
 
-  .title {
-    order: -2;
-    padding-right: 45px;
-  }
-
-  .subtitle {
+  .title-subtitle {
     order: -1;
+    padding-right: 45px;
   }
 
   .tag-info {
@@ -442,6 +438,7 @@ header {
     position: absolute;
     top: 30px;
     right: 30px;
+    cursor: pointer;
   }
 }
 
@@ -450,6 +447,10 @@ header {
   border: 1px solid #dfe1e6;
   border-radius: 16px;
   background-color: white;
+
+  h2 {
+    grid-area: header;
+  }
 
   &:nth-child(2) {
     grid-area: work1;
@@ -492,33 +493,26 @@ header {
     }
   }
 
-    // .work-details {
-      .work-description {
-        font-size: 15px;
-        width: 100%;
-        margin-bottom: 12px;
+  .work-description {
+    font-size: 15px;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+    .tag-info {
+      margin-top: 12px;
+      margin-bottom: 24px;
+
+      span {
+        margin-right: 8px;
+        margin-bottom: 8px;
+        font-size: 12px;
+        line-height: 16px;
+        padding: 4px 12px;
+        border-radius: 8px;
+        background-color: #ebebff;
       }
-
-      // .work-tags-buttons {
-      //   width: 100%;
-
-        .tag-info {
-          margin-top: 12px;
-          margin-bottom: 24px;
-  
-          span {
-            margin-right: 8px;
-            margin-bottom: 8px;
-            font-size: 12px;
-            line-height: 16px;
-            padding: 4px 12px;
-            border-radius: 8px;
-            background-color: #ebebff;
-          }
-        }
-      // }
-    // }
-  // }
+    }
 }
 
 #works {
@@ -531,15 +525,7 @@ header {
     "work3"
     "work4";
   grid-row-gap: 88px;
-  padding: 114px 24px;
-
-  h2 {
-    grid-area: header;
-  }
-
-  
-
-  
+  padding: 114px 24px;  
 }
 
 .btn {
@@ -806,56 +792,83 @@ footer {
   #works {
     grid-row-gap: 142px;
     padding: 10%;
+  }
 
-    .work-card {
-      padding: 24px;
-      box-sizing: border-box;
+  .modal {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 2px;
+    width: 80vw;
 
-      .work-image {
-        width: 50%;
+    .image-container {
+      height: 50vh;
+      overflow: hidden;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      
+      .image {
+        height: 100%;
+        width: auto;
+        object-fit: cover;
+      }
+    }
+
+    .title {
+      margin-bottom: 0px;
+    }
+
+    .work-description {
+      margin-right: 10px;
+    }
+
+    .tags-buttons {
+      width: 50%;
+    }
+  }
+
+  .work-card {
+    padding: 24px;
+    box-sizing: border-box;
+
+    .content {
+      width: 45%;
+
+      .title {
+        font-size: 40px;
+        line-height: 52px;
+        margin-bottom: 20px;
       }
 
-      .work-info {
-        width: 45%;
+      .subtitle {
+        margin-bottom: 32px;
 
-        .title {
-          font-size: 40px;
-          line-height: 52px;
-          margin-bottom: 20px;
-        }
+        div {
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 24px;
 
-        .subtitle {
-          margin-bottom: 32px;
-
-          div {
-            font-weight: 600;
-            font-size: 18px;
-            line-height: 24px;
-
-            & + div {
-              font-weight: 500;
-            }
+          & + div {
+            font-weight: 500;
           }
         }
+      }
 
-        .work-details {
-          .work-description {
-            font-size: 16px;
-            line-height: 24px;
-            margin-bottom: 24px;
-          }
+      .work-details {
+        .work-description {
+          font-size: 16px;
+          line-height: 24px;
+          margin-bottom: 24px;
+        }
 
-          .work-tags-buttons {
-            .tag-info {
-              margin-top: 0px;
-              margin-bottom: 40px;
-            }
+        .work-tags-buttons {
+          .tag-info {
+            margin-top: 0px;
+            margin-bottom: 40px;
           }
         }
       }
     }
   }
-
   /*
     ========================================
     About Myself

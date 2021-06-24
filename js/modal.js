@@ -57,13 +57,14 @@ function createElement(elementType, classNames, attributes = {}, textContent = '
 function createCard(index) {
   return {
     'work-card' : createElement('div',
-                                'work-card flex-col justify-between wrap' +
-                                  (index % 2 === 0 ? '' : ' desktop-row-reverse')),
-    'work-image' : createElement('div', 'work-image flex-col justify-center'),
-    'image' : createElement('img', 'image flex-row',
+                                'work-card flex-col desktop-flex-row justify-between' +
+                                (index % 2 === 0 ? '' : ' desktop-row-reverse')),
+    'image-container' : createElement('div', 'image-container flex-col'),
+    'image' : createElement('img', 'image',
                             {'src' : '/images/works/' + works[index].image + '.png',
                               'alt' : 'Screenshot of ' + works[index].title}),
-    'work-info' : createElement('div', 'work-info flex-col'),
+    'content' : createElement('div', 'content flex-col'),
+    'title-subtitle' : createElement('div', 'title-subtitle flex-col'),
     'title' : createElement('span', 'title flex-row blue-main span', {}, works[index].title),
     'subtitle' : createElement('div', 'subtitle flex-row align-center'),
     'client' : createElement('span', 'client blue-light', {}, works[index].client),
@@ -73,13 +74,13 @@ function createCard(index) {
                                       'alt' : 'Separator'}),
     'role' : createElement('span', 'role grey-main', {}, works[index].role),
     'year' : createElement('span', 'year grey-main', {}, works[index].year),
-    'work-details' : createElement('div', 'work-details flex-row wrap'),
+    'desc-tag-button' : createElement('div', 'desc-tag-button flex-col'),
     'work-description' : createElement('p', 'work-description flex-row blue-light', {}, works[index].description),
-    'work-tags-buttons' : createElement('div', 'work-tags-buttons flex-col'),
+    'tags-buttons' : createElement('div', 'tags-buttons flex-col'),
     'tag-info' : createElement('div', 'tag-info flex-row font-medium purple-main wrap'),
-    'work-technology': createElement('span', 'work-technology'),
+    'technology': createElement('span', 'technology'),
     'work-buttons' : createElement('div', 'work-buttons flex-row'),
-    'btn' : createElement('button', 'btn font-medium', {}, 'See Project'),
+    'button-project' : createElement('button', 'button-project btn font-medium', {}, 'See Project'),
     'button-live' : createElement('button', 'button-live button-modal btn font-medium',
                                   {}, '<a href="' + works[index].liveLink + '">See Live</a>'),
     'button-source' : createElement('button', 'button-source button-modal btn font-medium',
@@ -90,33 +91,26 @@ function createCard(index) {
 //Append card elements to required parents
 function structureCard(card, index) {
   workSection.appendChild(card['work-card']);
-  //card['work-card'].append(card['work-image'], card['work-info']);
-  card['work-card'].append(card['image'], card['title'], card['subtitle'],
-                          card['work-description'], card['tag-info'], card['work-buttons']);
-
-  // card['work-image'].appendChild(card['image']);
-
-  // card['work-info'].append(card['title'], card['subtitle'], card['work-details']);
+  card['work-card'].append(card['image-container'], card['content']);
+  card['image-container'].append(card['image']);
+  card['content'].append(card['title-subtitle'], card['desc-tag-button']);
+  card['title-subtitle'].append(card['title'], card['subtitle']);
   
   card['separator'].appendChild(card['separator-image']);
   card['subtitle'].append(card['client'], card['separator'],
                           card['role'], card['separator'].cloneNode(true),
                           card['year']);
 
-  // card['work-details'].append(card['work-description'], card['work-tags-buttons']);
-  // card['work-tags-buttons'].append(card['tag-info'], card['work-buttons']);
+  card['desc-tag-button'].append(card['work-description'], card['tags-buttons']);
+  card['tags-buttons'].append(card['tag-info'], card['work-buttons']);
 
-  let spans = [];
   works[index].technologies.forEach(tech => {
-    let span = card['work-technology'].cloneNode(true);
+    let span = card['technology'].cloneNode(true);
     span.textContent = tech;
-    spans.push(span);
+    card['tag-info'].appendChild(span);
   });
-  card['tag-info'].append(...spans);
 
-  card['work-buttons'].appendChild(card['btn'])
-
-  console.log(card['work-card']);
+  card['work-buttons'].appendChild(card['button-project'])
   return card;
 }
 
@@ -135,6 +129,15 @@ function showModal(index) {
   let modalCard = createCard(index);
   modalCard = structureCard(modalCard, index);
   modalCard['work-card'].classList.add('modal');
+  modalCard['work-card'].classList.remove('desktop-flex-row', 'desktop-row-reverse');
+
+  //Unpack content container and append its direct children to work card
+  modalCard['work-card'].append(modalCard['title-subtitle'], modalCard['desc-tag-button']);
+  modalCard['content'].remove();
+
+  modalCard['desc-tag-button'].classList.add('desktop-flex-row');
+  modalCard['work-description'].classList.add('desktop-flex-col');
+  modalCard['tags-buttons'].classList.add('desktop-flex-col');
 
   //Dynamically add modal close icon to modal work card,
   //and add event listener to close modal window
@@ -146,7 +149,7 @@ function showModal(index) {
     closeModal();
   });
 
-  modalCard['work-buttons'].removeChild(modalCard['btn']);
+  modalCard['work-buttons'].removeChild(modalCard['button-project']);
   modalCard['work-buttons'].append(modalCard['button-live'], modalCard['button-source']);
   modalCard['work-buttons'].classList.add('justify-around');
 
@@ -154,7 +157,7 @@ function showModal(index) {
   //and reduce brightness in the background
   body.append(modalCard['work-card']);
   body.querySelectorAll(':not(.modal, .modal *)').forEach(element => {
-    element.style.filter = 'brightness(50%)';
+    element.style.filter = 'brightness(50%) grayscale(100%)';
   })
 }
 
@@ -166,7 +169,7 @@ function populateWorkSection() {
   works.forEach((work, index) => {
     let card = createCard(index);
     card = structureCard(card, index);
-    card['btn'].addEventListener('click', function() {
+    card['button-project'].addEventListener('click', function() {
       showModal(index);
     });
   });
