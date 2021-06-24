@@ -62,7 +62,7 @@ function createCard(index) {
     'image-container': createElement('div', 'image-container flex-col'),
     image: createElement('img', 'image',
       {
-        src: `/images/works/${works[index].image}.png`,
+        src: `./images/works/${works[index].image}.png`,
         alt: `Screenshot of ${works[index].title}`,
       }),
     content: createElement('div', 'content flex-col'),
@@ -73,7 +73,7 @@ function createCard(index) {
     separator: createElement('div', 'separator'),
     'separator-image': createElement('img', 'separator-image',
       {
-        src: 'images/works/circle.png',
+        src: './images/works/circle.png',
         alt: 'Separator',
       }),
     role: createElement('span', 'role grey-main', {}, works[index].role),
@@ -146,7 +146,7 @@ function showModal(index) {
   // and add event listener to close modal window
   const modalClose = createElement('img', 'modal-close',
     {
-      src: '/images/icons/mobile-modal-close.svg',
+      src: './images/icons/mobile-modal-close.svg',
       alt: 'Close mobile modal window',
     });
   modalCard['work-card'].appendChild(modalClose);
