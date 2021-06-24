@@ -58,6 +58,10 @@ Things done so far in the project:
 * Use JavaScript media query
 * Apply JavaScript linting with ESLint
 
+### 8. Add details modal (pair programming)
+
+* Use JavaScript objects to store data
+
 ## Built With
 
 - Major languages: HTML, CSS, JS
@@ -76,6 +80,10 @@ Use the following command in your terminal:
 * **To clone the main project**
 ```
 git clone https://github.com/AkashaRojee/portfolio
+```
+* **To clone the details-modal branch**
+```
+git clone -b details-modal https://github.com/AkashaRojee/portfolio
 ```
 
 * **To clone the mobile-menu branch**
@@ -123,9 +131,9 @@ git clone -b mobile-skeleton https://github.com/AkashaRojee/portfolio
 
 * Both the mobile and the desktop version have been built. The website can be viewed in either view.
 
-* Main is up to date.
+* Main does not contain the details modal yet.
 
-* Currently under review: N/A.
+* Currently under review: details modal.
 
 ## Authors
 
