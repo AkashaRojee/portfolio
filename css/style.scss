@@ -411,20 +411,19 @@ header {
   }
 
   .work-buttons {
-
     .button-modal {
       width: 45%;
       white-space: nowrap;
       padding: 10px 50px 10px 10px;
       background-repeat: no-repeat;
       background-position: 90% 50%;
-      
+
       a {
         text-decoration: none;
         color: inherit;
       }
     }
-    
+
     .button-live {
       background-image: url('../images/icons/see-live.svg');
     }
@@ -499,20 +498,20 @@ header {
     margin-bottom: 12px;
   }
 
-    .tag-info {
-      margin-top: 12px;
-      margin-bottom: 24px;
+  .tag-info {
+    margin-top: 12px;
+    margin-bottom: 24px;
 
-      span {
-        margin-right: 8px;
-        margin-bottom: 8px;
-        font-size: 12px;
-        line-height: 16px;
-        padding: 4px 12px;
-        border-radius: 8px;
-        background-color: #ebebff;
-      }
+    span {
+      margin-right: 8px;
+      margin-bottom: 8px;
+      font-size: 12px;
+      line-height: 16px;
+      padding: 4px 12px;
+      border-radius: 8px;
+      background-color: #ebebff;
     }
+  }
 }
 
 #works {
@@ -525,7 +524,7 @@ header {
     "work3"
     "work4";
   grid-row-gap: 88px;
-  padding: 114px 24px;  
+  padding: 114px 24px;
 }
 
 .btn {
@@ -805,7 +804,7 @@ footer {
       overflow: hidden;
       margin-bottom: 20px;
       border-radius: 5px;
-      
+
       .image {
         height: 100%;
         width: auto;
@@ -814,7 +813,7 @@ footer {
     }
 
     .title {
-      margin-bottom: 0px;
+      margin-bottom: 0;
     }
 
     .work-description {
@@ -862,13 +861,14 @@ footer {
 
         .work-tags-buttons {
           .tag-info {
-            margin-top: 0px;
+            margin-top: 0;
             margin-bottom: 40px;
           }
         }
       }
     }
   }
+
   /*
     ========================================
     About Myself
