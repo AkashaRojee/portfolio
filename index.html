@@ -9,26 +9,26 @@
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag("js", new Date());
+      gtag('js', new Date());
 
-      gtag("config", "G-F3KC7KNZCX");
+      gtag('config', 'G-F3KC7KNZCX');
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Personal portfolio of Microverse projects" />
     <link rel="icon" href="./images/page-logo.png" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Portfolio</title>
-    <base href="https://akasharojee.github.io/portfolio/">
+    <!-- <base href="https://akasharojee.github.io/portfolio/" /> -->
   </head>
   <body>
     <!-- Navigation bar -->
 
     <header>
       <nav class="flex-row justify-between align-center">
-        <a href="https://akasharojee.github.io/portfolio/"><img src="./images/page-logo.png" alt="Page logo"></a>
-        <button type="button" class="menu-button"><img src="./images/menu-icon.png" alt="Open mobile menu"></button>
+        <a href="https://akasharojee.github.io/portfolio/"><img src="./images/page-logo.png" alt="Page logo" /></a>
+        <button type="button" class="menu-button"><img src="./images/menu-icon.png" alt="Open mobile menu" /></button>
         <div class="menu desktop body-text-small blue-light">
-          <button type="button"><img src="./images/mobile-menu-close-icon.svg" alt="Close mobile menu"></button>
+          <button type="button"><img src="./images/mobile-menu-close-icon.svg" alt="Close mobile menu" /></button>
           <a href="#works"><span>Portfolio</span></a>
           <a href="#about"><span>About</span></a>
           <a href="#contact"><span>Contact</span></a>
@@ -80,8 +80,7 @@
 
       <!-- Cards container -->
 
-      <section id="works" class="grid">
-      </section>
+      <section id="works" class="grid"></section>
 
       <!-- About Myself -->
 
@@ -177,14 +176,14 @@
     </main>
 
     <!-- Contact Me -->
-
+    <!-- pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" -->
     <footer id="contact" class="flex-col align-center">
       <h2 class="flex-row white-main">Contact me</h2>
       <p class="flex-row white-light">If you have an application you are interested in developing, a feature that you need built or a project that needs coding. I’d love to help with it</p>
 
       <form action="https://formspree.io/f/mleanrgp" method="POST" class="flex-col">
         <input type="text" name="user-name" id="name" maxlength="30" placeholder="Name" class="flex-row blue-main" required />
-        <input type="email" name="user-email" id="email" placeholder="user@mail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="flex-row blue-main" required />
+        <input type="email" name="user-email" id="email" placeholder="user@mail.com" class="flex-row blue-main" required />
         <textarea name="user-message" id="message" rows="5" maxlength="500" placeholder="Write your message here" class="flex-row blue-main" required></textarea>
         <div class="flex-row desktop-justify-center">
           <button type="submit" class="btn">Get In Touch</button>
@@ -194,5 +193,6 @@
 
     <script src="./js/script.js"></script>
     <script src="./js/modal.js"></script>
+    <script src="./js/form.js"></script>
   </body>
 </html>
