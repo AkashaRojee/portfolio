@@ -131,9 +131,9 @@ git clone -b mobile-skeleton https://github.com/AkashaRojee/portfolio
 
 * Both the mobile and the desktop version have been built. The website can be viewed in either view.
 
-* Main does not contain the details modal yet.
+* Main is up to date.
 
-* Currently under review: details modal.
+* Currently under review: N/A.
 
 ## Authors
 
