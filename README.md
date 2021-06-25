@@ -67,6 +67,10 @@ Things done so far in the project:
 * Use JavaScript validation with Constraint Validation API
 * Refactor common functions into a library
 
+### 10. Preserve data in browser (pair programming)
+
+* Use Storage API to save data into local storage
+
 ## Built With
 
 - Major languages: HTML, CSS, JS
