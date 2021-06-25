@@ -62,6 +62,11 @@ Things done so far in the project:
 
 * Use JavaScript objects to store data
 
+### 9. Validate contact form (pair programming)
+
+* Use JavaScript validation with Constraint Validation API
+* Refactor common functions into a library
+
 ## Built With
 
 - Major languages: HTML, CSS, JS
@@ -81,6 +86,12 @@ Use the following command in your terminal:
 ```
 git clone https://github.com/AkashaRojee/portfolio
 ```
+
+* **To clone the validate-contact-form branch**
+```
+git clone -b validate-contact-form https://github.com/AkashaRojee/portfolio
+```
+
 * **To clone the details-modal branch**
 ```
 git clone -b details-modal https://github.com/AkashaRojee/portfolio
