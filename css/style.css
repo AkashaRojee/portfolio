@@ -679,13 +679,13 @@ footer form .error {
   color: red;
   margin-left: 10px;
   padding: 5px;
-  background: #ffffff3d;
+  background: #ffffff5c;
   font-size: 12px;
   border-radius: 5px;
   line-height: 20px;
   font-weight: 500;
   border: 2px solid red;
-  width: 70%;
+  width: 80%;
 }
 
 @media (min-width: 1024px) {
