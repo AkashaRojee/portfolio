@@ -10,9 +10,7 @@ let menuItems = menu.querySelectorAll('a');
 function styleMenuItems(newElement, oldElement) {
   menuItems = menu.querySelectorAll(oldElement);
   menuItems.forEach((menuItem) => {
-    const element = document.createElement(newElement);
-    element.textContent = menuItem.textContent;
-    menuItem.replaceWith(element);
+    menuItem.replaceWith(createElement(newElement, '', {}, menuItem.textContent));
   });
 }
 
@@ -37,8 +35,7 @@ function switchActiveMenuButton() {
 function checkView() {
   if (hamburgerView.matches) {
     // Clicking on active menu button / on menu items toggles the mobile menu
-    activeMenuButton.addEventListener('click', switchActiveMenuButton);
-    menuItems.forEach((menuItem) => menuItem.addEventListener('click', switchActiveMenuButton));
+    addEventListeners([...menuItems, activeMenuButton], 'click', switchActiveMenuButton);
   }
 }
 

@@ -42,17 +42,6 @@ works = [
     'https://github.com/AkashaRojee/uber-navigation'),
 ];
 
-// Create HTML element of given type and add classes, attributes and textContent (where applicable)
-function createElement(elementType, classNames, attributes = {}, textContent = '') {
-  const elementObject = document.createElement(elementType);
-  elementObject.classList.add(...(classNames.split(' ')));
-  Object.keys(attributes).forEach((attribute) => {
-    elementObject.setAttribute(attribute, attributes[attribute]);
-  });
-  elementObject.innerHTML = textContent;
-  return elementObject;
-}
-
 // Create card elements
 function createCard(index) {
   return {

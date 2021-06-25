@@ -535,6 +535,7 @@ header {
   border: 1px solid #7f8cff;
   background-color: white;
   border-radius: 8px;
+  white-space: nowrap;
 
   &:hover {
     cursor: pointer;
@@ -652,6 +653,19 @@ footer {
       border: 1px solid #cfd8dc;
       font-size: 14px;
       line-height: 20px;
+    }
+
+    .error {
+      color: red;
+      margin-left: 10px;
+      padding: 5px;
+      background: #ffffff5c;
+      font-size: 12px;
+      border-radius: 5px;
+      line-height: 20px;
+      font-weight: 500;
+      border: 2px solid red;
+      width: 80%;
     }
   }
 }
