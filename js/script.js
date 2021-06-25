@@ -1,3 +1,5 @@
+/* global createElement, addEventListeners */
+
 // Store objects to be used in mobile menu open/close
 const hamburgerView = window.matchMedia('(max-width: 768px)');
 const hamburgerButton = document.querySelector('nav button');

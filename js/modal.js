@@ -1,3 +1,5 @@
+/* global createElement */
+
 let works = [];
 const workSection = document.querySelector('#works');
 const body = document.querySelector('body');
